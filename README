@@ -1,0 +1,89 @@
+Fusion optics Raytracer
+(formerly 'minerva-optics')
+
+This is a completely open source Java ray tracing system I wrote and am using to design an optical polarisation diagnostic for the IPP Greifswald (Max Planck Institute, Germany).
+It has no GUI or 'main program' but the examples and tests will give you the idea.
+
+Copyright 2011 Oliver Ford <codes[at]oliford.co.uk>
+
+Go ahead and use it, copy it, modify it etc etc, although some reference/attributation is always appreciated.
+PLEASE send me an e-mail if you try to use it though, because I can probably help you out a bit.
+
+This work is licensed to everyone and anyone under GNU LGPL license. See the files
+COPYING and COPYING.LESSER.
+
+Parts of the seed.minerva.optics.materials files are under various other or unknown licenses
+as it is mostly data that was taken from other places and retains those licenses.
+
+The rest of this is a collection of notes on the concepts and requirements...
+
+
+This project is the new ray tracer, which isn't actually much to do with Minerva at the moment.
+However, I share all the optical component properties (things like glass refractive indices etc) with minerva-imse from here.
+
+Also, I may later use the rayTracer directly, with a caching layer, rather than manually precalculating the optical response.
+
+I may even end up fitting the optics to the calibration with the ray tracer. 
+Now there's a scary thought.
+
+Setup:
+  Element: 			Any object in 3D space.
+  Surface:			Definition of physical surface in 3D, with an interface and 1 or 2 media.
+  Optic:			Collection of surfaces, their media and other optics, formed into a single optic.
+  Interface: 		Optical interface specification (Polarisation Reflection, Absorption, Transmission etc)
+  Material:			Description of material properties (Refractive indices, dispersion etc)
+  Medium:			Single implementation of a material (at a specific orientation, temperature etc)
+
+Tracing in/out:
+  RaySegment:		Single straight segment of a ray with possibly multiple polarisation components.
+  Intersection:		Contact point of rays with a surface. Single incident rays and possibly multiple outgoing rays.
+  Polarisation:		Single component of polarised light on a ray.	
+
+Currently, there is some confusion over the idea of having interfaces and media as separate things, since the interface type is often determined by the medium types.
+
+To work out how to use this, look at the tests and examples. For simple ray tracing, it should be fairly self-explanatory. Polarisation tracing is a bit more complex.
+The best example for polarisation is probably the MuellerTest.
+
+
+The PSF (Point Spread Functions) optical characterisation system.
+----------------------------------------------------------------------
+
+The idea with this, is to be able to characterise an optics system in terms of the PSF it makes on an image plane,
+in terms of the 3D position. The system is general to any type of PSF, but the Gaussian and DualGaussian PSFs are
+already written and the latter is a reasonable approximation for spherical abberation dominated blur spots.
+
+The PSF framework provides the ability to trilinear interpolate the 3D grid of PSFs, to give the contribution
+to the grid from any source point quickly, based on a relatively small amount of precalculated PSFs from ray tracing.
+
+The PSF system also calculated the effective Mueller matrix for the all the rays fired. This is a part coherent
+and part incoherent average of the polarisation effects on the rays from source to some defined 'polarisation plane'.
+Typically, this is not the image plane, since camera's can't usually detected polarisation and it will be instead
+at some device like a PEMs, where the polarisation information is recoded as something else (time variation of intensity
+in this case). Changes in polarisation after that plane this would not be important.
+
+The PSF builder also handles both coherent and incoherent addition. Usually, different rays, even if from the same source
+point, can be considered incoherent. In which case, call PointSpreadBuilder.nextCoherentSet() in between each Tracer.trace() call.
+Multiple intersections in between those calls must therefore come from split paths of the same ray (e.g. reflections
+or birefringent media) and so are added coherently. The calculated Mueller matrix will represent both types of addition 
+correctly (although it loses the sign of the overall phase).
+
+Examples, Tests and devTests
+-------------------
+
+examples/ - lots of small apps that use the tracer in simple ways under examples/. 
+tests/ -  actual units tests for high and low level functionality.
+devTests/ - Small tests and outputting things for me to test things during development. Not actual unit tests.
+
+Dependencies
+-------------------
+
+There are lots of projects linked to this, as I use it within Minerva (http://seed.e-science.org).
+
+I have now stripped Minerva itself from the ray tracer, but it still depends on some parts which are packaged in
+DigeomOptimMatrix.jar
+
+AlgorithmRepository and JavaOneLineUtils are free.
+
+E-mail us!
+
+oliford <codes[at]oliford.co.uk>
