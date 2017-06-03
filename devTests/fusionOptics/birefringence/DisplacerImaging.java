@@ -1,47 +1,31 @@
 package fusionOptics.birefringence;
 
-import java.util.List;
-
+import binaryMatrixFile.BinaryMatrixFile;
 import fusionOptics.MinervaOpticsSettings;
 import fusionOptics.OpticApprox;
 import fusionOptics.Util;
 import fusionOptics.drawing.SVGRayDrawing;
 import fusionOptics.drawing.VRMLDrawer;
 import fusionOptics.interfaces.Absorber;
-import fusionOptics.interfaces.IsoIsoInterface;
 import fusionOptics.interfaces.IsoUniaxialInterface;
 import fusionOptics.lenses.Custom50mmF1;
-import fusionOptics.lenses.EdmundOptics50mmAspheric;
-import fusionOptics.lenses.Nikon135mmF28;
-import fusionOptics.lenses.Nikon50mmF11;
 import fusionOptics.materials.AlphaBariumBorate;
-import fusionOptics.materials.BK7;
-import fusionOptics.materials.CrystalQuartz;
 import fusionOptics.materials.UniaxialFixedIndexGlass;
 import fusionOptics.optics.Box;
-import fusionOptics.optics.SimplePlanarAsphericLens;
-import fusionOptics.optimisationMulti.BendableDish;
 import fusionOptics.optimisationMulti.MoveableElement;
 import fusionOptics.optimisationMulti.OptimiseMulti;
 import fusionOptics.optimisationMulti.RayBundle;
-import fusionOptics.optimisationMulti.ShapeableAshperic;
-import fusionOptics.surfaces.Dish;
 import fusionOptics.surfaces.Iris;
 import fusionOptics.surfaces.Square;
-import fusionOptics.tracer.AsphericImagingExample;
 import fusionOptics.tracer.Tracer;
 import fusionOptics.types.Element;
-import fusionOptics.types.Intersection;
 import fusionOptics.types.Material;
 import fusionOptics.types.Medium;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
-import binaryMatrixFile.BinaryMatrixFile;
-import oneLiners.OneLiners;
-import svg.SVGSplitView3D;
 import jafama.FastMath;
-import junit.framework.TestCase;
+import oneLiners.OneLiners;
 
 /** Look at the phase and contrast of a single perfect displacer plate
  *  via a real imaging system (aspheric or camera lens)
