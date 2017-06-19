@@ -4,7 +4,7 @@ import fusionOptics.interfaces.Absorber;
 import fusionOptics.optics.SequentialLensSeries;
 import fusionOptics.surfaces.Iris;
 
-/** Wide angle lens (120°) from Zemax data base (F_004.ZMX) f/2, f=30.98562 mm) */
+/** Wide angle lens (120Â°) from Zemax data base (F_004.ZMX) f/2, f=30.98562 mm) */
 public class WideAngle120deg31mmF2 extends SequentialLensSeries {
 	
 	public WideAngle120deg31mmF2() { this(1.0); }
