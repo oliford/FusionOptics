@@ -52,6 +52,8 @@ public abstract class SimpleBeamGeometry  {
 		
 	public double getLOfBeamAxisAtR(int beamIdx, double R) {
 		double t[] = Algorithms.cylinderLineIntersection(start(beamIdx), uVec(beamIdx), new double[]{0,0,0}, new double[]{0,0,1}, R*R);
+		if(t[0] >= 0 && t[1] < 0) return t[0];
+		if(t[0] < 0 && t[1] >= 0) return t[1];
 		return (t.length == 0) ? Double.NaN : Math.min(t[0],t[1]);
 	}
 	
@@ -65,12 +67,13 @@ public abstract class SimpleBeamGeometry  {
 	}
 	
 	public Optic makeAllBeamCylds(){
-		return makeAllBeamCylds(0.05, 0.16);
+		//return makeAllBeamCylds(0.05, 0.16);
+		return makeAllBeamCylds(0.05, beamWidth);		
 	}
 	
 	public Optic makeAllBeamCylds(double dL, double fwhm){
-		double l0 = 0.2;
-		double l1 = 2.9;		
+		double l0 = getLOfBeamAxisAtR(0+0, plasmaR0);
+		double l1 = getLOfBeamAxisAtR(0, plasmaR1);		
 		return makeAllBeamCylds(dL, fwhm, l0, l1);
 	}
 		
