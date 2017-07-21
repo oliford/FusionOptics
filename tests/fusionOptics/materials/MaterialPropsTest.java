@@ -47,7 +47,7 @@ public class MaterialPropsTest extends TestCase {
 		/* Original data is from Bequerel formula, an entirely alternate measurement
 		 * comes from
 		 * [ C.Z.Tan "Wavelength dependence of the Faraday effect in glassy SiO2"
-				J Phys & Chem Solids 60 (1999) 1689–1692 ]
+				J Phys & Chem Solids 60 (1999) 1689���1692 ]
 		
 				The numbers given are radians per Amp in their glass rod, in their coil
 				with H = 18484.3 I, presumably in S.I units of H, so				
@@ -55,7 +55,7 @@ public class MaterialPropsTest extends TestCase {
 				length of rod = 19.97mm
 				
 				Err... no.
-				They say their V = -e µ0/(2mc)λ dN/dλ, which is same as the Bequerel forumla but with the µ_0.
+				They say their V = -e ��0/(2mc)�� dN/d��, which is same as the Bequerel forumla but with the ��_0.
 				That converts from their odd radians/Amp unit back to radians/Tesla/m
 				The experiment geometry is not in the number, just the silly unit.
 				
@@ -125,7 +125,7 @@ public class MaterialPropsTest extends TestCase {
 		//									" degrees per mm at 100mT");
 		System.out.println("SFL6: " + (new SchottSFL6()).getVerdetConstant(0, 589.3e-9, 300) * 180 / Math.PI * 0.1 * 1e-3 +
 											" degrees per mm at 100mT");
-		System.out.println("BK7: " + (new BK7()).getVerdetConstant(0, 589.3e-9, 300) * 180 / Math.PI * 0.1 * 1e-3 +
+		System.out.println("BK7: " + (new BK7()).getVerdetConstant(0, 656.3e-9, 300) * 180 / Math.PI * 0.1 * 1e-3 +
 											" degrees per mm at 100mT");
 		System.out.println("LiNbO3 No(589.3nm) = " + (new LithiumNiobate()).getRefractiveIndex(0, 589.3e-9, 300));
 		System.out.println("LiNbO3 No(589.4nm) = " + (new LithiumNiobate()).getRefractiveIndex(0, 589.4e-9, 300));
@@ -161,6 +161,14 @@ public class MaterialPropsTest extends TestCase {
 		phs(653.9e-9);
 		phs(653.5e-9);
 		phs(653.1e-9);
+		
+		//System.out.println("BK7: " + (new BK7()).getVerdetConstant(0, 656.3e-9, 300) + " rads per m at 1T");
+		System.out.println("BK7: " + (new BK7()).getVerdetConstant(0, 656.3e-9, 300) + " rads per m at 1T");
+		System.out.println("B270: " + (new B270()).getVerdetConstant(0, 656.3e-9, 300) + " rads per m at 1T");
+		
+		System.out.println("B270 No(435.83nm) = " + (new B270()).getRefractiveIndex(0, 435.83e-9, 300)); // should be 1.5341
+		System.out.println("B270 No(656.27nm) = " + (new B270()).getRefractiveIndex(0, 656.27e-9, 300)); // 1.5203
+		System.out.println("B270 No(546.07nm) = " + (new B270()).getRefractiveIndex(0, 546.07e-9, 300)); // 1.5251
 		
 		//(new AlphaBariumBorate()).getLinearDispersion(0, 600e-9, 300);
 	}
