@@ -11,7 +11,7 @@ public class PlaneAngleInfo implements IntersectionProcessor {
 	private Plane targetPlane;
 	
 	private double sumN, sumU, sumR, sumI;
-	private double minAng, maxAng;
+	private double minAng, maxAng, lastAng;
 	BinaryMatrixWriter dbgOut = null;
 	
 	public PlaneAngleInfo(Plane target) {
@@ -34,11 +34,12 @@ public class PlaneAngleInfo implements IntersectionProcessor {
 		sumR += I * R;
 		sumI += I;
 		
-		double ang = FastMath.atan2(FastMath.sqrt(U*U + R*R), N);
-		if(ang < minAng)
-			minAng = ang;
-		if(ang > maxAng)
-			maxAng = ang;
+		lastAng = FastMath.atan2(FastMath.sqrt(U*U + R*R), N);
+		//System.out.println(ang / Math.PI * 180.0);
+		if(lastAng < minAng)
+			minAng = lastAng;
+		if(lastAng > maxAng)
+			maxAng = lastAng;
 		
 		if(dbgOut != null)
 			dbgOut.writeRow(I, N, U, R, targetHit.incidentRay.dir);
@@ -57,6 +58,9 @@ public class PlaneAngleInfo implements IntersectionProcessor {
 	
 	public double getMinAngle() { return minAng; }	
 	public double getMaxAngle() { return maxAng; }
+	
+	/** Gets the angle of the last ray traced through the plane*/
+	public double getLastAngle() { return lastAng; }
 	
 	/** @return the mean vector at the intersection, in cartesian space */
 	public double[] getMeanVector() {
@@ -85,6 +89,9 @@ public class PlaneAngleInfo implements IntersectionProcessor {
 		if(this.dbgOut != null)
 			this.dbgOut.close();
 		this.dbgOut = new BinaryMatrixWriter(fileName, 7);
+	}
+	public void closeDbgOut() {
+		this.dbgOut.close();
 	}
 	
 }
