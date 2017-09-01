@@ -32,18 +32,23 @@ public class ThorLabs100mmAspheric extends SimplePlanarAsphericLens {
 			-2.0138223e-15,		// R^8
 			-4.5977971e-19,		// R^10
 	};
-		
+	
 	public ThorLabs100mmAspheric(double[] pos, double normal[]) {
+		this(pos, normal, 1.0);
+	}
+		
+	public ThorLabs100mmAspheric(double[] pos, double normal[], double scale) {
 		super("thorLabs100mmAspheric",
 				pos, 
 				normal, 
-				diameter / 2, 
-				curvatureRadius, 
-				thickness, 
+				diameter / 2 * scale, 
+				curvatureRadius * scale, 
+				thickness * scale, 
 				conicConstant, 
-				Aspheric.rescaleCoeffs(polyCoeffs_mm, rescale), 
+				Aspheric.rescaleCoeffs(polyCoeffs_mm, rescale * scale), 
 				new Medium(mat), 
 				IsoIsoInterface.ideal()); 
+		
 	}
 
 	
