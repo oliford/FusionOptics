@@ -27,7 +27,9 @@ public class OharaS_TIH6 extends DispersionCoefficientBased {
 			throw new RuntimeException("Not implemented. This was only measured at 656nm");
 		}
 		
-		return 0.4; // We measured somewhere between -0.14 and +0.4, so this is the worst case scenario
+		//return 0.4; // We measured somewhere between -0.14 and +0.4, so this is the worst case scenario
+		return -0.10253; // measured in Garching, Aug/Sept 2017, error < 0.004 wavelength ~651nm (only negative verdet, all others positive)
+
 	}
 
 }
