@@ -34,17 +34,28 @@ public class B270 extends IsotropicLinearDispersiveGlass {
 		return 1.0; //unknown
 	}
 
-	@Override
-	public double getVerdetConstant(int modeNumber, double wavelen, double temperature) {
+	//@Override
+	//public double getVerdetConstant(int modeNumber, double wavelen, double temperature) {
 		/*
 		 * Unknown, using the same magneto optic anomaly of BK7
 		 */
-		double magnetoOpticAnomaly = 0.72;
+	//	double magnetoOpticAnomaly = 0.72;
 		
-		if(wavelen < 457.9e-9 || wavelen > 660e-9) //32.8e-9)
-			throw new IllegalArgumentException("Wavelength out of range for BK7.getVerdetConstant()");
+	//	if(wavelen < 457.9e-9 || wavelen > 660e-9) //32.8e-9)
+	//		throw new IllegalArgumentException("Wavelength out of range for BK7.getVerdetConstant()");
 		
-		return verdetConstFromBecquerelRelation(modeNumber, wavelen, temperature, magnetoOpticAnomaly);
+	//	return verdetConstFromBecquerelRelation(modeNumber, wavelen, temperature, magnetoOpticAnomaly);
+	//}
+	
+	@Override
+	public double getVerdetConstant(int modeNumber, double wavelen,
+			double temperature) {
+		
+		if(wavelen < 640e-9 || wavelen > 670e-9){
+			throw new RuntimeException("Not implemented. This was only measured at 656nm");
+		}
+		
+		return 4.6913; // measured in Garching, Aug/Sept 2017, error < 0.2  wavelength ~651nm 
 	}
 	
 	//Materials with no modifiable content are equal if they are the same type
