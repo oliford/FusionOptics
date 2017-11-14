@@ -41,7 +41,7 @@ public class FusedSilica extends Material {
 	public double getRefractiveIndex(int modeNumber, double wavelength,
 			double temperature) {		
 
-		double wavelengthSq = (wavelength*1e6)*(wavelength*1e6); //formula requires λ in µm
+		double wavelengthSq = (wavelength*1e6)*(wavelength*1e6); //formula requires lambda in um
 
 		return FastMath.sqrt( 
 					d[0]
@@ -72,6 +72,8 @@ public class FusedSilica extends Material {
 					//throw new IllegalArgumentException(
 					"Wavelength out of range for FusedSilica.getVerdetConstant()");
 
+		//System.out.println("lambda: " + String.valueOf(wavelen));
+		//System.out.println("verdet of SiO2: " + String.valueOf(verdetConstFromBecquerelRelation(modeNumber, wavelen, temperature, magnetoOpticAnomaly)));
 		return verdetConstFromBecquerelRelation(modeNumber, wavelen, temperature, magnetoOpticAnomaly);
 	}
 	
