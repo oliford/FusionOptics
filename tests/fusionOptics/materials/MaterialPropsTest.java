@@ -152,8 +152,14 @@ public class MaterialPropsTest extends TestCase {
 		System.out.println("aBBO B(653.5nm) = " + (mat.getRefractiveIndex(1, 653.5e-9, 300) - mat.getRefractiveIndex(0, 653.5e-9, 300)));
 		System.out.println("aBBO dB/dlambda(653.5nm) = " + (mat.getLinearDispersion(1, 653.5e-9, 300) - mat.getLinearDispersion(0, 653.5e-9, 300)));
 		
-		System.out.println("aBBO No(464nm) = " + mat.getRefractiveIndex(0, 464e-9, 300));
-		System.out.println("aBBO Ne(464nm) = " +mat.getRefractiveIndex(1, 464e-9, 300));
+		double no = mat.getRefractiveIndex(0, 464e-9, 300);
+		double ne=mat.getRefractiveIndex(1, 464e-9, 300);
+		System.out.println("aBBO No(464nm) = " + no);
+		System.out.println("aBBO Ne(464nm) = " + ne);
+		
+		double C= (no*no - ne*ne) /(no*no + ne*ne); 
+		double D= (ne - no) / 2;
+		System.out.println("C = "+ C + ", D=" + D);
 		
 		//phs(464.742e-9);
 		//phs(465.025e-9);
