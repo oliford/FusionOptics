@@ -33,7 +33,7 @@ public class Nikon50mmF11 extends SequentialLensSeries {
 	}
 
 	public Nikon50mmF11(double[] centre) { this(centre, 1.0, null); }
-	public Nikon50mmF11(double[] centre, double scale) { this(centre, 1.0, null); }
+	public Nikon50mmF11(double[] centre, double scale) { this(centre, scale, null); }
 	public Nikon50mmF11(double[] centre, double scale, double axis[]) {
 		this(scale);
 		shift(centre);
