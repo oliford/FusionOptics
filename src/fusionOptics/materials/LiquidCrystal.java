@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import fusionOptics.types.Material;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 import algorithmrepository.exceptions.NotImplementedException;
 
 /** Some info from John of what the Ferro-electric Liquid Crystal dispersion might look like 

@@ -52,7 +52,7 @@ import otherSupport.ColorMaps;
 import otherSupport.RandomManager;
 import otherSupport.StatusOutput;
 import oneLiners.OneLiners;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /**
  * Investigation of depolarision / polarisation modification effect

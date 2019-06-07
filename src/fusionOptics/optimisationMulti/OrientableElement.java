@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import algorithmrepository.Algorithms;
-import jafama.FastMath;
+import net.jafama.FastMath;
 import fusionOptics.Util;
 import fusionOptics.surfaces.Plane;
 import fusionOptics.types.Element;

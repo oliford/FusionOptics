@@ -11,7 +11,7 @@ import fusionOptics.types.Material;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Surface;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** Small misc static helper methods (mostly vector maths) */
 public abstract class Util {

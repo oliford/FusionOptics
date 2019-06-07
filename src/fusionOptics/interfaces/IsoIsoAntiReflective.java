@@ -23,7 +23,7 @@ package fusionOptics.interfaces;
 import fusionOptics.types.Interface;
 import fusionOptics.types.Medium;
 import algorithmrepository.exceptions.NotImplementedException;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /**  Interface with single layer anti-reflective coating.
  * 

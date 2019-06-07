@@ -14,7 +14,7 @@ import fusionOptics.types.Optic;
 import algorithmrepository.Algorithms;
 import algorithmrepository.LinearInterpolation1D;
 import binaryMatrixFile.BinaryMatrixWriter;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** Collects all vectors and positions of the light hitting a surface.
  * Can be used to find the approx optimal focus point and max/average light cones.

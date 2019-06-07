@@ -29,7 +29,7 @@ import fusionOptics.types.Medium;
 import fusionOptics.types.RaySegment;
 import fusionOptics.types.Surface;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 import algorithmrepository.Algorithms;
 
 

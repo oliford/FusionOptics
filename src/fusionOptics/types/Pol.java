@@ -29,7 +29,7 @@ import fusionOptics.surfaces.Square;
 
 import otherSupport.Profiler;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 
 /** Describes a state of polarisation and provides various 

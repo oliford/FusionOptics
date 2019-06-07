@@ -1,7 +1,7 @@
 package fusionOptics;
 
 import fusionOptics.types.Material;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** Static calc utils for approximations and ideal cases */
 public abstract class OpticApprox {

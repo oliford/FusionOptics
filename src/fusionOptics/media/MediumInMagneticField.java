@@ -7,7 +7,7 @@ import fusionOptics.types.Material;
 import fusionOptics.types.Medium;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** Medium immersed in a homogeneous magnetic field.
  * 

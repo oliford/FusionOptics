@@ -20,7 +20,7 @@
  */
 package fusionOptics.drawing;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

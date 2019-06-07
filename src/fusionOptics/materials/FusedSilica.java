@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import fusionOptics.types.Material;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 
 /** Fused Silica (SiO2). Like Crystal Quartz, but not birefringent. 

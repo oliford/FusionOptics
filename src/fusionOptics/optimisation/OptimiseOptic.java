@@ -20,7 +20,7 @@ import otherSupport.RandomManager;
 
 import binaryMatrixFile.BinaryMatrixWriter;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 import oneLiners.OneLiners;
 import algorithmrepository.Algorithms;
 import algorithmrepository.ConjugateGradient;

@@ -2,7 +2,7 @@ package fusionOptics.tracer;
 
 import java.util.List;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 import junit.framework.TestCase;
 import fusionOptics.MinervaOpticsSettings;
 import fusionOptics.drawing.SVGRayDrawing;

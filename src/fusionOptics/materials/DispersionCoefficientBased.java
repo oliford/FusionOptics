@@ -2,7 +2,7 @@ package fusionOptics.materials;
 
 import java.util.Arrays;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 import fusionOptics.types.Material;
 
 /** Based on the simpler dispersion formula (Sellmeier equation?)

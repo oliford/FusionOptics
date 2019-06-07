@@ -1,6 +1,6 @@
 package fusionOptics.types;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

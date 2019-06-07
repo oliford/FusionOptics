@@ -20,7 +20,7 @@
  */
 package fusionOptics.surfaces;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 import java.util.ArrayList;
 import java.util.Arrays;

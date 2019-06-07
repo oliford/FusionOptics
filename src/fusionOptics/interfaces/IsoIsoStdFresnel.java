@@ -21,7 +21,7 @@
 package fusionOptics.interfaces;
 
 import fusionOptics.types.Medium;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** Simple uncoated standard interface between two isotropic media
  * Reflection and transmission coefficients according to the standard

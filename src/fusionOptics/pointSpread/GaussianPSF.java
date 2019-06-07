@@ -13,7 +13,7 @@ import algorithmrepository.exceptions.NotImplementedException;
 
 import oneLiners.OneLiners;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** Simple Gaussian intensity PSF.
  * 

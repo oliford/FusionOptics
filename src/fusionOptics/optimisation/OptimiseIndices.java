@@ -3,7 +3,7 @@ package fusionOptics.optimisation;
 import fusionOptics.materials.IsotropicLinearDispersiveGlass;
 import fusionOptics.types.Element;
 import fusionOptics.types.Material;
-import jafama.FastMath;
+import net.jafama.FastMath;
 import seed.optimization.Optimizer;
 
 /** Modification of material refractive indecies to focus an image

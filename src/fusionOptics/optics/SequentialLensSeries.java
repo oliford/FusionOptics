@@ -10,7 +10,7 @@ import fusionOptics.types.Material;
 import fusionOptics.types.Medium;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Surface;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** Simple sequential lens series from data */
 public class SequentialLensSeries extends Optic {

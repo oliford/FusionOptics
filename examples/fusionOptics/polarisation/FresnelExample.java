@@ -31,7 +31,7 @@ import otherSupport.ColorMaps;
 import binaryMatrixFile.BinaryMatrixFile;
 
 import oneLiners.OneLiners;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** Examine transmittance and reflectance vs angle and polarisation for a single interface */
 public class FresnelExample {

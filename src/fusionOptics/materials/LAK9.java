@@ -3,7 +3,7 @@ package fusionOptics.materials;
 import java.util.Arrays;
 import fusionOptics.types.Material;
 import algorithmrepository.LinearInterpolation1D;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** This is the LAK9 Schott glass
  * 

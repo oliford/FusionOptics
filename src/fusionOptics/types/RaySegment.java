@@ -39,7 +39,7 @@ import binaryMatrixFile.BinaryMatrixFile;
 import binaryMatrixFile.BinaryMatrixWriter;
 
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** Describes the striaght propagation of a ray through a medium*/
 public class RaySegment {

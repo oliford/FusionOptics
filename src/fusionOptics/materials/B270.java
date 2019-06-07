@@ -6,7 +6,7 @@ import fusionOptics.types.Material;
 
 import algorithmrepository.LinearInterpolation1D;
 import algorithmrepository.exceptions.NotImplementedException;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** This is the B270 Schott glass
  * 

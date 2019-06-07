@@ -6,7 +6,7 @@ import fusionOptics.types.Material;
 
 import binaryMatrixFile.BinaryMatrixFile;
 import algorithmrepository.exceptions.NotImplementedException;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** For materials with a refractive index calculated from the Sellmeier equation */ 
 public class SellmeierBased extends Material {

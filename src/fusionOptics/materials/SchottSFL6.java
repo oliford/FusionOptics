@@ -5,7 +5,7 @@ import java.util.Arrays;
 import fusionOptics.types.Material;
 
 import algorithmrepository.LinearInterpolation1D;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** This is the SFL6 Schott glass, which I'm assuming is the 
  * same as the 'SLF6' mentioned in the AUG MSE system design.

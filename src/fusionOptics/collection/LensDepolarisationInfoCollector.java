@@ -7,7 +7,7 @@ import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
 import binaryMatrixFile.BinaryMatrixFile;
 import binaryMatrixFile.BinaryMatrixWriter;
-import jafama.FastMath;
+import net.jafama.FastMath;
 import oneLiners.OneLiners;
 
 /** Collects an image of the average polarisation at a given polarisation plane,

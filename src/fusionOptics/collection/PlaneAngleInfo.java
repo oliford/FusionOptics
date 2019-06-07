@@ -4,7 +4,7 @@ import fusionOptics.Util;
 import fusionOptics.surfaces.Plane;
 import fusionOptics.types.Intersection;
 import binaryMatrixFile.BinaryMatrixWriter;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** Collects statistics of the angle of rays through a given surface */
 public class PlaneAngleInfo implements IntersectionProcessor {

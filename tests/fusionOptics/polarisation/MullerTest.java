@@ -52,7 +52,7 @@ import otherSupport.RandomManager;
 import otherSupport.StatusOutput;
 
 import oneLiners.OneLiners;
-import jafama.FastMath;
+import net.jafama.FastMath;
 import junit.framework.TestCase;
 /**
  * Test that the PSF Mueller matrix determination

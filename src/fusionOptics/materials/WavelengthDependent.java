@@ -7,7 +7,7 @@ import fusionOptics.types.Material;
 import binaryMatrixFile.BinaryMatrixFile;
 import algorithmrepository.LinearInterpolation1D;
 import algorithmrepository.exceptions.NotImplementedException;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** Materials with wavelength dependent refractive indices given as a linear interpolatable
  * function.

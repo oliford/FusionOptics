@@ -20,7 +20,7 @@
  */
 package fusionOptics.surfaces;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -159,7 +159,8 @@ public class Dish extends Surface {
 		double X2[] = new double[3];
 		double N1[] = new double[3];
 		double N2[] = new double[3];
-		
+
+		//hit points and surface normals at those points
 		for(int i=0;i<3;i++){
 			X1[i] = ray.startPos[i] + s1 * ray.dir[i];
 			X2[i] = ray.startPos[i] + s2 * ray.dir[i];
@@ -235,7 +236,7 @@ public class Dish extends Surface {
 
 	/** Getters for defining properties */
 	public double[] getCentre() { return centre.clone(); }
-	public double[] getDishNormal() { return dishNormal; }
+	public double[] getDishNormal() { return dishNormal.clone(); }
 	public double getRadiusOfCurv() { return radiusOfCurv; }
 	public double getDishDiameter() { return dishDiameter; }
 	

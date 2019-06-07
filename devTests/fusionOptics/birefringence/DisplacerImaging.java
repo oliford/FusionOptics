@@ -24,7 +24,7 @@ import fusionOptics.types.Medium;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
-import jafama.FastMath;
+import net.jafama.FastMath;
 import oneLiners.OneLiners;
 
 /** Look at the phase and contrast of a single perfect displacer plate

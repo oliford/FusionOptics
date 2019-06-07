@@ -34,7 +34,7 @@ import otherSupport.RandomManager;
 import binaryMatrixFile.BinaryMatrixFile;
 
 import oneLiners.OneLiners;
-import jafama.FastMath;
+import net.jafama.FastMath;
 import junit.framework.TestCase;
 
 /** Check that total intensity is preserved for light on iso/iso and iso/uni interfaces */

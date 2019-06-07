@@ -39,7 +39,7 @@ import otherSupport.RandomManager;
 import binaryMatrixFile.BinaryMatrixFile;
 import binaryMatrixFile.BinaryMatrixWriter;
 import oneLiners.OneLiners;
-import jafama.FastMath;
+import net.jafama.FastMath;
 import junit.framework.TestCase;
 
 /** Tests for splitting of rays by refraction in birefringent materials

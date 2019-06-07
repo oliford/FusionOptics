@@ -4,7 +4,7 @@ package fusionOptics.optimisationMulti;
 import java.util.ArrayList;
 import java.util.List;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 import otherSupport.RandomManager;
 import binaryMatrixFile.BinaryMatrixWriter;
 import fusionOptics.Util;

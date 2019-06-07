@@ -1,6 +1,6 @@
 package fusionOptics.tracer;
 
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 import java.util.List;
 

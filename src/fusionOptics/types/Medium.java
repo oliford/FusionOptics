@@ -6,8 +6,8 @@ import fusionOptics.Util;
 import fusionOptics.interfaces.IsoUniaxialInterface;
 
 import algorithmrepository.exceptions.NotImplementedException;
-import jafama.DoubleWrapper;
-import jafama.FastMath;
+import net.jafama.DoubleWrapper;
+import net.jafama.FastMath;
 
 /** Describes an instance of a material (in space). 
  * i.e. it has a material, orientation, optic axis info

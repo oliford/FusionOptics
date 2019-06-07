@@ -5,7 +5,7 @@ import java.util.Arrays;
 import fusionOptics.types.Material;
 
 import algorithmrepository.exceptions.NotImplementedException;
-import jafama.FastMath;
+import net.jafama.FastMath;
 
 /** Calcite Crystal CaCO3
  * 
