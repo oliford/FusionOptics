@@ -83,7 +83,7 @@ public class Paraboloid extends Surface {
 		double right[] = Util.reNorm(Util.cross(normal, up));
 		
 		 
-		double Mr = Util.dot(mf, right); //coordinate of mirror from tip along 'right' direction
+		double Mr = -Util.dot(mf, right); //coordinate of mirror from tip along 'right' direction
 		double MFn = Util.dot(mf, normal); //distance along of mirror behind focus (along 'normal' direction)
 		
 		double f1 = MFn/2 + FastMath.sqrt(MFn*MFn + Mr*Mr)/2;
