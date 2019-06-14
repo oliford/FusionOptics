@@ -8,6 +8,8 @@ import java.util.Arrays;
 
 import java.util.List;
 
+import algorithmrepository.Algorithms;
+import algorithmrepository.interfaces.Scalar1D;
 import fusionOptics.Util;
 import fusionOptics.tracer.Tracer;
 import fusionOptics.types.Interface;
@@ -21,6 +23,8 @@ import fusionOptics.types.RaySegment;
  * 
  * Normal = (B-A) x (C-A) so points A,B,C
  *  are anticlockwise looking at the surface from it's 'front' side.
+ *  
+ *  TODO: Check if  Algorithms#pathIntersectsTriangle is faster - it probably is
  * 
  * @author oliford
  */
