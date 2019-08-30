@@ -83,9 +83,9 @@ public class Triangle extends Plane {
 	  
 		this.up = Util.reNorm(Util.minus(A, centre));
 		
-		double lA = FastMath.sqrt(FastMath.pow2(A[0]-centre[0]) + FastMath.pow2(A[1]-centre[2]) + FastMath.pow2(A[1]-centre[2]));
-		double lB = FastMath.sqrt(FastMath.pow2(B[0]-centre[0]) + FastMath.pow2(B[1]-centre[2]) + FastMath.pow2(B[1]-centre[2]));
-		double lC = FastMath.sqrt(FastMath.pow2(C[0]-centre[0]) + FastMath.pow2(C[1]-centre[2]) + FastMath.pow2(C[1]-centre[2]));
+		double lA = FastMath.sqrt(FastMath.pow2(A[0]-centre[0]) + FastMath.pow2(A[1]-centre[1]) + FastMath.pow2(A[2]-centre[2]));
+		double lB = FastMath.sqrt(FastMath.pow2(B[0]-centre[0]) + FastMath.pow2(B[1]-centre[1]) + FastMath.pow2(B[2]-centre[2]));
+		double lC = FastMath.sqrt(FastMath.pow2(C[0]-centre[0]) + FastMath.pow2(C[1]-centre[1]) + FastMath.pow2(C[2]-centre[2]));
 		
 		this.boundRadius = FastMath.max(FastMath.max(lA, lB), lC);
 		right = Util.reNorm(Util.cross(normal, up));		
