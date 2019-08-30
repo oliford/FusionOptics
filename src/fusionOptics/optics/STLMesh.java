@@ -40,7 +40,7 @@ public class STLMesh  extends Optic {
 			public final static void addTrianglesInRadius(Optic optic, String fileName, double[] centre, double radius) throws IOException{
 				
 				Triangles triangles = BinarySTLFile.mustRead(fileName);
-				double scale= 0.0010;
+				double scale= 0.001;
 				for(int i=0; i < triangles.count; i++){
 					
 					for(int j=0; j < 3; j++){
