@@ -11,6 +11,11 @@ import fusionOptics.types.Optic;
 
 public class STLMesh  extends Optic {
 			
+			public STLMesh(String fileName) {				
+				super(fileName.replaceAll(".*/", ""));
+				mustAddTrianglesInRadius(this, fileName, null, 0);
+			}
+			
 			public STLMesh(String name, String fileName) {
 				super(name);
 				mustAddTrianglesInRadius(this, fileName, null, 0);
