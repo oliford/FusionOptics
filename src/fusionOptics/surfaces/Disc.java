@@ -107,8 +107,7 @@ public class Disc extends Plane {
 
 	@Override
 	protected boolean planeBoundaryEquals(Plane obj) {
-		return (this == obj) || ( super.equals(obj) 
-					&& Double.doubleToLongBits(radius) == Double.doubleToLongBits(((Disc)obj).radius) );
+		return (this == obj) || ( Double.doubleToLongBits(radius) == Double.doubleToLongBits(((Disc)obj).radius) );
 	}
 	
 }
