@@ -7,7 +7,7 @@ import fusionOptics.types.RaySegment;
 import binaryMatrixFile.BinaryMatrixWriter;
 
 /** Writes full hit information straight to a Binary matrix file */
-public class HitsCollector implements IntersectionProcessor {
+public class HitsCollectorWithPolarisation implements IntersectionProcessor {
 	
 	public int iL;
 	public int iA, iB;
@@ -21,9 +21,9 @@ public class HitsCollector implements IntersectionProcessor {
 	
 	public Plane polarisationPlane;
 	
-	public HitsCollector(String fileName, Plane polarisationPlane) {
+	public HitsCollectorWithPolarisation(String fileName, Plane polarisationPlane) {
 		this.polarisationPlane = polarisationPlane;
-		this.hitsOut = new BinaryMatrixWriter(fileName, 14);
+		this.hitsOut = new BinaryMatrixWriter(fileName, 20);
 	}
 	
 	@Override
@@ -50,7 +50,13 @@ public class HitsCollector implements IntersectionProcessor {
 				startRay.startPos, 								// 4: start posXYZ 
 				imgHit.pos, 								// 7: hit posXYZ 
 				imgPos,  									//10: image position
-				(col != null) ? col : new double[]{0,0,0} //12: colour, (to match drawing)
+				(col != null) ? col : new double[]{0,0,0}, //12: colour, (to match drawing)
+				Pol.intensity(imgHit.incidentRay.E1[0]),	//15: total intensity
+				Pol.psi(polHit.incidentRay.E1[0]),			//16: rotation dir of light originally 'up'
+				Pol.chi(polHit.incidentRay.E1[0]),			//17: ellipticity of light originally 'up'
+				Pol.intensity(imgHit.incidentRay.E1[1]),	//18: total intensity
+				Pol.psi(polHit.incidentRay.E1[1]),			//19: rotation dir of light originally 'right'						
+				Pol.chi(polHit.incidentRay.E1[1])			//20: ellipticity of light originally 'right'				
 				
 			);
 		nHits++;
