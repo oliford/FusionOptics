@@ -74,6 +74,9 @@ public abstract class Surface implements Element {
 	/** Returns the parent optic of this surface */
 	public Optic getOptic(){ return parentOptic; }
 	
+	/** Allows parent optics to mark this surface as part of them (not necessarily done) */
+	public void setOptic(Optic optic){ this.parentOptic = optic; }
+	
 	/** Returns lines (lists of double[x/y/z]s), describing the surface */ 
 	public abstract List<double[][]> draw();
 

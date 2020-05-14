@@ -300,6 +300,7 @@ public class Optic implements Element {
 			subOptics.add((Optic) element);
 		}else if( element instanceof Surface ){
 			surfaces.add((Surface) element);
+			((Surface) element).setOptic(this);
 		}else
 			throw new IllegalArgumentException("Optics can only be made up of surfaces or other optics. Element '"+element+"' is neither.");
 
