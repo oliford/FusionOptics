@@ -208,6 +208,10 @@ public class Triangle extends Plane {
 				&& Arrays.equals(B, other.B)
 				&& Arrays.equals(C, other.C);
 	}
+
+	public double getArea() {
+		return Util.length(Util.cross(AB, AC)) / 2;
+	}
 	
 
 }
