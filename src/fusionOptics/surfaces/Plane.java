@@ -27,8 +27,8 @@ public abstract class Plane extends Surface {
 	
 	public Plane(String name, double centre[], double normal[], Medium frontMedium, Medium backMedium, Interface iface){
 		super(name, frontMedium, backMedium, iface);
-		this.centre =  centre;
-		this.normal = normal;
+		this.centre = (centre == null) ? null : centre.clone();
+		this.normal = (normal == null) ? null : normal.clone();
 	}
 	
 	protected void initArbitraryPerps(){

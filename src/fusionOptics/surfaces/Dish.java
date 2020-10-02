@@ -73,7 +73,7 @@ public class Dish extends Surface {
 	public Dish(String name, double centre[], double dishCentreNormal[], double radiusOfCurvature, double rimRadius,
 			Medium frontMedium, Medium backMedium, Interface iface) {
 		super(name, frontMedium, backMedium, iface);
-		this.centre = centre;
+		this.centre = centre.clone();
 		this.dishNormal = dishCentreNormal;
 		this.radiusOfCurv = radiusOfCurvature;
 		this.dishDiameter = rimRadius*2;
