@@ -81,29 +81,32 @@ public class Optic implements Element {
 	public double[] getBoundarySphereCentre() {
 		if(boundSphereCentre != null)
 			return boundSphereCentre;
-		boundSphereCentre = new double[3];
 		
-		int n=0;
-		for(Surface surface : surfaces) {
-			double c[] = surface.getBoundarySphereCentre();
-			boundSphereCentre[0] += c[0];
-			boundSphereCentre[1] += c[1];
-			boundSphereCentre[2] += c[2];
-			n++;
+		synchronized(this) {
+			boundSphereCentre = new double[3];
+			
+			int n=0;
+			for(Surface surface : surfaces) {
+				double c[] = surface.getBoundarySphereCentre();
+				boundSphereCentre[0] += c[0];
+				boundSphereCentre[1] += c[1];
+				boundSphereCentre[2] += c[2];
+				n++;
+			}
+			for(Optic subOptic : subOptics) {
+				double c[] = subOptic.getBoundarySphereCentre();
+				boundSphereCentre[0] += c[0];
+				boundSphereCentre[1] += c[1];
+				boundSphereCentre[2] += c[2];
+				n++;
+			}
+			if(n == 0)
+				throw new RuntimeException("Trying to calculate bounding sphere for Optic '"+getName()+"' with no subelements");
+			boundSphereCentre[0] /= n;
+			boundSphereCentre[1] /= n;
+			boundSphereCentre[2] /= n;
+			return boundSphereCentre;
 		}
-		for(Optic subOptic : subOptics) {
-			double c[] = subOptic.getBoundarySphereCentre();
-			boundSphereCentre[0] += c[0];
-			boundSphereCentre[1] += c[1];
-			boundSphereCentre[2] += c[2];
-			n++;
-		}
-		if(n == 0)
-			throw new RuntimeException("Trying to calculate bounding sphere for Optic '"+getName()+"' with no subelements");
-		boundSphereCentre[0] /= n;
-		boundSphereCentre[1] /= n;
-		boundSphereCentre[2] /= n;
-		return boundSphereCentre;
 	}
 	
 	/** Returns the approximate centre of the object (as an arbitrary definition)
@@ -112,27 +115,30 @@ public class Optic implements Element {
 	public double[] getCentre() {
 		if(geometricCentre != null)
 			return geometricCentre;
-		geometricCentre = new double[3];
 		
-		int n=0;
-		for(Surface surface : surfaces) {
-			double c[] = surface.getCentre();
-			geometricCentre[0] += c[0];
-			geometricCentre[1] += c[1];
-			geometricCentre[2] += c[2];
-			n++;
+		synchronized (this) {			
+			geometricCentre = new double[3];
+			
+			int n=0;
+			for(Surface surface : surfaces) {
+				double c[] = surface.getCentre();
+				geometricCentre[0] += c[0];
+				geometricCentre[1] += c[1];
+				geometricCentre[2] += c[2];
+				n++;
+			}
+			for(Optic subOptic : subOptics) {
+				double c[] = subOptic.getCentre();
+				geometricCentre[0] += c[0];
+				geometricCentre[1] += c[1];
+				geometricCentre[2] += c[2];
+				n++;
+			}
+			geometricCentre[0] /= n;
+			geometricCentre[1] /= n;
+			geometricCentre[2] /= n;
+			return geometricCentre;
 		}
-		for(Optic subOptic : subOptics) {
-			double c[] = subOptic.getCentre();
-			geometricCentre[0] += c[0];
-			geometricCentre[1] += c[1];
-			geometricCentre[2] += c[2];
-			n++;
-		}
-		geometricCentre[0] /= n;
-		geometricCentre[1] /= n;
-		geometricCentre[2] /= n;
-		return geometricCentre;
 	}
 	
 	/** Returns the radius of the bounding sphere of this optic 
@@ -141,31 +147,33 @@ public class Optic implements Element {
 	public double getBoundarySphereRadius(){
 		if(!Double.isNaN(boundSphereRadius))
 			return boundSphereRadius;
-		if(boundSphereCentre == null)
-			boundSphereCentre = getBoundarySphereCentre(); //set, because it might be overridden
-		
-		boundSphereRadius = 0;
-		for(Surface surface : surfaces) {
-			double c[] = surface.getBoundarySphereCentre();
-			double r = surface.getBoundarySphereRadius();
-			double dx = (c[0]-boundSphereCentre[0]);
-			double dy = (c[1]-boundSphereCentre[1]);
-			double dz = (c[2]-boundSphereCentre[2]);
-			double d = FastMath.sqrt(dx*dx+dy*dy+dz*dz);
-			if( (d+r) > boundSphereRadius )
-				boundSphereRadius = d+r;
+		synchronized (this) {				
+			if(boundSphereCentre == null)
+				boundSphereCentre = getBoundarySphereCentre(); //set, because it might be overridden
+			
+			boundSphereRadius = 0;
+			for(Surface surface : surfaces) {
+				double c[] = surface.getBoundarySphereCentre();
+				double r = surface.getBoundarySphereRadius();
+				double dx = (c[0]-boundSphereCentre[0]);
+				double dy = (c[1]-boundSphereCentre[1]);
+				double dz = (c[2]-boundSphereCentre[2]);
+				double d = FastMath.sqrt(dx*dx+dy*dy+dz*dz);
+				if( (d+r) > boundSphereRadius )
+					boundSphereRadius = d+r;
+			}
+			for(Optic subOptic : subOptics) {
+				double c[] = subOptic.getBoundarySphereCentre();
+				double r = subOptic.getBoundarySphereRadius();
+				double dx = (c[0]-boundSphereCentre[0]);
+				double dy = (c[1]-boundSphereCentre[1]);
+				double dz = (c[2]-boundSphereCentre[2]);
+				double d = FastMath.sqrt(dx*dx+dy*dy+dz*dz);
+				if( (d+r) > boundSphereRadius )
+					boundSphereRadius = d+r;
+			}
+			return boundSphereRadius;
 		}
-		for(Optic subOptic : subOptics) {
-			double c[] = subOptic.getBoundarySphereCentre();
-			double r = subOptic.getBoundarySphereRadius();
-			double dx = (c[0]-boundSphereCentre[0]);
-			double dy = (c[1]-boundSphereCentre[1]);
-			double dz = (c[2]-boundSphereCentre[2]);
-			double d = FastMath.sqrt(dx*dx+dy*dy+dz*dz);
-			if( (d+r) > boundSphereRadius )
-				boundSphereRadius = d+r;
-		}
-		return boundSphereRadius;
 	}
 	
 	/** Test if the given ray enters the optic's bounding sphere */
