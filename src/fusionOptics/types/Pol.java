@@ -69,8 +69,8 @@ public abstract class Pol {
 	
 	private static final DecimalFormat strFmt = new DecimalFormat("#.##");
 	
-	private static double pols[][][] = null;
-	private static int nextPol = 0;
+	//private static double pols[][][] = null;
+	//private static int nextPol = 0;
 	
 	/** Creates a new polarisation object by multiplying by ghe given complex coefficients 
 	 * 
@@ -138,7 +138,8 @@ public abstract class Pol {
 	 * @return
 	 */
 	public final static double[][] alloc(int l){
-		if(pols == null){
+		return new double[l][4];
+		/*if(pols == null){
 			pols = new double[10][l][4];
 			nextPol = 0;
 			//System.out.println("Pols preallocing for length " + l + " x100");
@@ -151,13 +152,13 @@ public abstract class Pol {
 			nextPol = 0;
 			//System.out.println("Pols reallocing because too short length " + l + " x"+pols.length);
 		}
-		return pols[nextPol++];
+		return pols[nextPol++];*/
 	}
 	
 	/** Deallocates all the polarisations arrays.
 	 * TODO: Find out if all this is really necessary.  */
 	public final static void recoverAll() {
-		nextPol = 0;
+		//nextPol = 0;
 	}
 	
 	public static final double[][] scaleAll(double[][] E, double scale) {
