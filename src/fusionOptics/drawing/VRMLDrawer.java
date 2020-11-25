@@ -721,5 +721,6 @@ public class VRMLDrawer implements RayDrawer {
 	public void setTransformationMatrix(double[][] rotationMatrix) {
 		this.globalRotMat = rotationMatrix;
 	}
-	
+
+	public String getFileName() { return this.fileName; }	
 }

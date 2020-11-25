@@ -88,4 +88,5 @@ public class AsciiOutForWendel extends LineDrawer {
 	@Override
 	public void endGroup() { }
 
+	public String getFileName() { return this.fileName; }
 }
