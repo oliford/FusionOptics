@@ -133,7 +133,7 @@ public abstract class Tracer {
 		Util.reNorm(unit);
 		
 		if(lengthAsSolidAngle){
-			double targetSolidAngle = 2*Math.PI * (1.0 - cosMaxTheta);
+			double targetSolidAngle = 2*Math.PI * (1.0 - cosMaxTheta); //exact, see https://en.wikipedia.org/wiki/Solid_angle#Cone,_spherical_cap,_hemisphere
 			unit[0] *= targetSolidAngle;
 			unit[1] *= targetSolidAngle;
 			unit[2] *= targetSolidAngle;
