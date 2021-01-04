@@ -1,4 +1,4 @@
-package fusionOptics.load;
+package fusionOptics.examples.load;
 
 import fusionOptics.MinervaOpticsSettings;
 import fusionOptics.Util;
@@ -75,7 +75,7 @@ public class LoadZemaxFile {
 	public static void main(String[] args) {
 		
 		// with thanks to Nick Konidaris for this: http://sites.google.com/site/nickkonidaris/prescriptions 
-		ZemaxXMZFile zmxFile = new ZemaxXMZFile("/work/ipp/scrap/zemax-lenses/"+lens+".ZMX");
+		ZemaxXMZFile zmxFile = new ZemaxXMZFile("src/fusionOptics/lenses/"+lens+".ZMX");
 		zmxFile.setIrisOuterRadius(0.03);
 		zmxFile.load();
 

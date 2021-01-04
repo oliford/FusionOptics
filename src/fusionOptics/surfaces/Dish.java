@@ -81,6 +81,9 @@ public class Dish extends Surface {
 		calcThetaCrit();
 		calcCurvCentre();
 		
+		if(!Double.isFinite(thetaCrit) || !Double.isFinite(curvCentre[0]))
+			throw new IllegalArgumentException("Invalid dish shape. radiusOfCurvature = " + radiusOfCurvature + ", rimRadius = " + rimRadius);
+		
 	}
 	
 	protected void calcThetaCrit(){

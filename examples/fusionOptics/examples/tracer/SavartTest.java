@@ -1,4 +1,4 @@
-package fusionOptics.tracer;
+package fusionOptics.examples.tracer;
 
 import net.jafama.FastMath;
 

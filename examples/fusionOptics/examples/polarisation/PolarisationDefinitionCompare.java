@@ -1,4 +1,4 @@
-package fusionOptics.polarisation;
+package fusionOptics.examples.polarisation;
 
 import java.text.DecimalFormat;
 import java.util.List;

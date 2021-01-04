@@ -1,4 +1,4 @@
-package fusionOptics.optimisationMulti;
+package fusionOptics.examples.optimisationMulti;
 
 import oneLiners.OneLiners;
 import otherSupport.ColorMaps;
@@ -11,6 +11,9 @@ import fusionOptics.interfaces.IsoIsoStdFresnel;
 import fusionOptics.interfaces.Reflector;
 import fusionOptics.materials.IsotropicFixedIndexGlass;
 import fusionOptics.optics.SimpleDoubleConvexLens;
+import fusionOptics.optimisationMulti.BendableDish;
+import fusionOptics.optimisationMulti.OptimiseMulti;
+import fusionOptics.optimisationMulti.RayBundle;
 import fusionOptics.surfaces.Cylinder;
 import fusionOptics.surfaces.Dish;
 import fusionOptics.surfaces.Iris;

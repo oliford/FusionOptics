@@ -1,4 +1,4 @@
-package fusionOptics.pointSpread;
+package fusionOptics.examples.pointSpread;
 
 import java.util.List;
 
