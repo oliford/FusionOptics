@@ -27,7 +27,6 @@ import fusionOptics.pointSpread.DualGaussianPSF;
 import fusionOptics.pointSpread.GaussianPSF;
 import fusionOptics.pointSpread.PointSpreadBuilder;
 import fusionOptics.pointSpread.PointSpreadFunction;
-import fusionOptics.polarisation.MullerTest;
 import fusionOptics.surfaces.Cylinder;
 import fusionOptics.surfaces.Disc;
 import fusionOptics.surfaces.Dish;
@@ -126,7 +125,7 @@ public class MirrorPolarisation {
 		//double commonDef[] = new double[]{ 0, 1, 0 };
 		double commonDef[] = new double[]{ 0, rt2/2, rt2/2 };
 		
-		StatusOutput stat = new StatusOutput(MullerTest.class, maxHits);
+		StatusOutput stat = new StatusOutput(MirrorPolarisation.class, maxHits);
 		for(int i=0; i < maxRays; i++) {
 			RaySegment ray = new RaySegment();
 			
