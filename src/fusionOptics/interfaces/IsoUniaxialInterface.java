@@ -84,7 +84,7 @@ public class IsoUniaxialInterface extends DualMediumInterface {
 	/** If true, for rays that hit uniaxial glass perpendicular or parallel to the
 	 * optic axis, the ray is not split and the birefringence is treated as a modification 
 	 * to the polarisation states on the single ray as it propagates through the material.
-	 * Rays that hit with a significant angle to the surface will throw and exception.
+	 * Rays that hit with a significant angle to the surface will throw an exception.
 	 * 
 	 * If false, the ray is split into separate E and O rays at the interface as it would be in the general case,
 	 * even if the rays are actually parallel (i.e. for perp/para to optic axis).
