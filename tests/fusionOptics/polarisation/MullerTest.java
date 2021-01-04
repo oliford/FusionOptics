@@ -155,33 +155,13 @@ public class MullerTest extends TestCase {
 		
 		// **************** Setup 9: Simple short focal length lens *******************
 		Material lensMat = new  IsotropicFixedIndexGlass(1.5);
-		SimpleDoubleConvexLens lens1 = SimpleDoubleConvexLens.fromFocalLengthAndCentreThickness("lens1", new double[]{ 2.0, 0, 0 }, new double[]{ -1, 0, 0 }, 0.5, 0.15, 0.005, new Medium(lensMat), IsoIsoStdFresnel.ideal(), wavelen);
-		SimpleDoubleConvexLens lens2 = SimpleDoubleConvexLens.fromFocalLengthAndCentreThickness("lens2", new double[]{ 4.0, 0, 0 }, new double[]{ -1, 0, 0 }, 0.5, 0.3, 0.005, new Medium(lensMat), IsoIsoStdFresnel.ideal(), wavelen);
-		Cylinder escapeShield = new Cylinder("escapeShield", new double[]{ 3.0, 0, 0 },  new double[]{ -1, 0, 0 }, 0.4, 4.0, Absorber.ideal());
+		SimpleDoubleConvexLens lens1 = SimpleDoubleConvexLens.fromFocalLengthAndEdgeThickness("lens1", new double[]{ 2.0, 0, 0 }, new double[]{ -1, 0, 0 }, 0.15, 0.150, 0.005, new Medium(lensMat), IsoIsoStdFresnel.ideal(), wavelen);
+		SimpleDoubleConvexLens lens2 = SimpleDoubleConvexLens.fromFocalLengthAndEdgeThickness("lens2", new double[]{ 4.0, 0, 0 }, new double[]{ -1, 0, 0 }, 0.15, 0.300, 0.005, new Medium(lensMat), IsoIsoStdFresnel.ideal(), wavelen);
+		Cylinder escapeShield = new Cylinder("escapeShield", new double[]{ 3.0, 0, 0 },  new double[]{ -1, 0, 0 }, 0.15, 4.0, Absorber.ideal());
 		Optic shrtFocalLenses = new Optic("shrtFocalLenses", new Element[]{ lens1, lens2, escapeShield });
 		//Util.rotateOnY(lens1, new double[]{ 2.5, 0, 0 }, 14 * Math.PI / 180);
 		//Util.rotateOnY(lens2, new double[]{ 2.5, 0, 0 }, -14 * Math.PI / 180);
-		
-		// **************** Setup 10: The short focal length lens from the end of the AUG MSE system *******************
-		Medium lensGlass = new Medium(new SchottSFL6());
-		Interface lensIFace = IsoIsoStdFresnel.ideal();
-		
-		Iris lens3AIris = new Iris("lens3AIris", new double[]{ 1.5, 0,0 }, new double[]{ -1, 0, 0 }, 0.15, 0.040, Absorber.ideal());
-		Dish lens3AFront = new Dish("lens3AFront", new double[]{ 1.52774, 0,0 }, new double[]{ 1, 0, 0 }, 0.128, 0.040, lensGlass, null, lensIFace);
-		Disc lens3ABack = new Disc("lens3ABack", new double[]{ 1.535, 0,0 }, new double[]{ 1, 0, 0}, 0.040, null, lensGlass, lensIFace);
-		
-		Dish lens3BFront = new Dish("lens3BFront", new double[]{ 1.53596, 0,0 }, new double[]{ 1, 0, 0 }, 0.064, 0.037, lensGlass, null, lensIFace);
-		Dish lens3BBack = new Dish("lens3BBack", new double[]{ 1.54318, 0,0 }, new double[]{ 1, 0, 0 }, 0.128, 0.037, null, lensGlass, lensIFace);
-
-		Material reparaGlass = new IsotropicFixedIndexGlass(2.8);
-		SimpleDoubleConvexLens reparaLens1 = SimpleDoubleConvexLens.fromFocalLengthAndCentreThickness("reparaLens", new double[]{ 1.612 + 0.18, 0, 0}, new double[]{ -1, 0, 0}, 0.4, 0.12, 0.005, new Medium(reparaGlass), IsoIsoInterface.ideal(), wavelen);
-		SimpleDoubleConvexLens reparaLens2 = SimpleDoubleConvexLens.fromFocalLengthAndCentreThickness("reparaLens", new double[]{ 1.612 + 0.22, 0, 0}, new double[]{ -1, 0, 0}, 0.4, 0.12, 0.005, new Medium(reparaGlass), IsoIsoInterface.ideal(), wavelen);
-		//Iris reparaIris = new Iris("reparaIris", new double[]{ 1.612 + 0.15 }, new double[]{ -1, 0, 0 }, 0.05, 0.04, iface)
-		
-		
-		Optic augShrtLenses = new Optic("augShrtLenses", new Element[]{ lens3AFront, lens3ABack, lens3BFront, lens3BBack,reparaLens1,reparaLens2 });
-		augShrtLenses.shift(new double[]{ -1.535 + 2.5, 0, 0 });
-		
+				
 		
 		
 		
@@ -242,7 +222,6 @@ public class MullerTest extends TestCase {
 				quartwaveVert, 
 				quartwavePos45,
 				shrtFocalLenses,
-				augShrtLenses,
 				//depol,
 			};
 		
@@ -254,7 +233,7 @@ public class MullerTest extends TestCase {
 		
 		Optic all = new Optic("all", testOptics);
 		
-		VRMLDrawer vrmlOut = new VRMLDrawer(outPath + "/muller.vrml", 0.01);
+		VRMLDrawer vrmlOut = new VRMLDrawer(outPath + "/muller.vrml", 0.001);
 		vrmlOut.setDrawPolarisationFrames(true);
 		vrmlOut.setSkipRays(maxHits / 27);
 		
@@ -386,7 +365,7 @@ public class MullerTest extends TestCase {
 		vrmlOut.drawOptic(all);
 		vrmlOut.destroy();
 
-		assertTrue("Meuller calculation mistmatched expected. See stdout for details.", allOK);
+		assertTrue("One of the Meuller calculations mistmatched expected. See stdout for details.", allOK);
 
 	}
 	
