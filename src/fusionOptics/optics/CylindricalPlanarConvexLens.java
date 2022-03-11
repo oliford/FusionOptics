@@ -150,12 +150,13 @@ public class CylindricalPlanarConvexLens extends Optic {
 	public void setFocalLength(double f, double wavelength) {
 		
 		double n= lensMedium.getMaterial().getRefractiveIndex(0, wavelength, 300);
-		double lensRadius = curvedSurface.getDishDiameter()/2;
+		// double lensRadius = curvedSurface.getDishDiameter()/2;
 		
 		radiusOfCurv = focalLengthToRadCurv(f, n);
 		
 		//frontSurface.setRadiusOfCurv(radiusOfCurv);
-		curvedSurface.setRadiusOfCurv(radiusOfCurv);
+		// curvedSurface.setRadiusOfCurv(radiusOfCurv);
+		throw new RuntimeException("Not implemented");
 		
 	}
 
@@ -165,6 +166,9 @@ public class CylindricalPlanarConvexLens extends Optic {
 	public TruncatedCylinder getBackSurface() { return curvedSurface;	}
 	public Disc getFrontSurface() { return flatSurface;	}
 
-	public double getRadius() { return Math.max(flatSurface.getRadius(), curvedSurface.getDishDiameter()/2); }
+	public double getRadius() { 
+		//return Math.max(flatSurface.getRadius(), curvedSurface.getDishDiameter()/2);
+		throw new RuntimeException("Not implemented");
+	}
 	
 }
