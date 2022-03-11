@@ -4,14 +4,15 @@
 	<groupId>fusionOptics</groupId>
 	<artifactId>FusionOptics</artifactId>
 	<version>1.0.4</version>
-
-	<scm>
-		<connection>scm:svn:https://svn.seed-escience.org/public/FusionOptics</connection>
-		<developerConnection>scm:svn:https://svn.seed-escience.org/public/FusionOptics</developerConnection>
-		<url>https://svn.seed-escience.org</url>
-		<tag>HEAD</tag>
+    <scm>
+		<connection>scm:git:ssh://git@git.ipp-hgw.mpg.de/FusionOptics/${project.name}.git</connection>
+    	<developerConnection>scm:git:ssh://git@git.ipp-hgw.mpg.de/FusionOptics/${project.name}.git</developerConnection>    	
+		<url>https://gitlab.ipp-hgw.mpg.de/FusionOptics/${project.name}/tree/master</url>
 	</scm>
-
+		<issueManagement>
+		<url>https://gitlab.ipp-hgw.mpg.de/ImageProc/${project.name}/issues</url>
+		<system>GitLab Issues</system>
+	</issueManagement>
 	<distributionManagement>
 		<repository>
 			<id>minerva-central</id>
@@ -156,27 +157,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>buildnumber-maven-plugin</artifactId>
-				<version>1.4</version>
-				<executions>
-					<execution>
-						<phase>test</phase>
-						<goals>
-							<goal>create</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<doCheck>true</doCheck>
-					<doUpdate>true</doUpdate>
-					<providerImplementations>
-						<svn>javasvn</svn>
-					</providerImplementations>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
