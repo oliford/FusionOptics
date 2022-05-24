@@ -53,8 +53,8 @@ public class ParabolicImagingExample {
 	final static int nRaysPerSource = 10000;
 	final static double rt2 = Math.sqrt(2);
 	
-	final static double startY[] = OneLiners.linSpace(-0.3, 0.3, 4);
-	final static double startZ[] = OneLiners.linSpace(-0.3, 0.3, 3);
+	final static double startY[] = OneLiners.linSpace(-0.5, 0.5, 4);
+	final static double startZ[] = OneLiners.linSpace(-0.5, 0.5, 3);
 	
 	final static double wavelen = 593e-9;
 	
@@ -62,20 +62,22 @@ public class ParabolicImagingExample {
 		
 		Square backPlane = new Square("backPlane", new double[]{ -0.3, 0, 0 }, new double[]{ 1, 0, 0 }, new double[]{ 0, 1, 0 }, 10.100, 10.300, Absorber.ideal());
 		
-		Iris iris1 = new Iris("iris1", new double[] { 2.5, 0, 0}, new double[] {-1,0,0}, 0.5, 0.1, Absorber.ideal());
-		Disc target1 = new Disc("target1", new double[] { 2.5, 0, 0}, new double[] {-1,0,0}, 0.1, NullInterface.ideal());
 		
-		double sepDist = 0.3;
+		double objectToMirrors = 4.0;
+		double focusDist = 0.5;
+		double sepDist = 0.1;	
+		double imageDist = 0.3;
+		double aperatureBeforeMirror = 0.050;
 		
 		/* M1 focus at source/dest */
-		double pos[] = { 3.0, 0, 0};
-		double focus[] = { 2.0, 0.0, 0 };
+		double pos[] = { objectToMirrors, 0, 0};
+		double focus[] = { objectToMirrors - focusDist, 0.0, 0 };
 		double normal[] = {0, 1, 0};
 		//*/
 		
 		/* M2 focus at source/dest */
-		double pos2[] = { 3.0, sepDist, 0};
-		double focus2[] = { 2.0, sepDist, 0 };
+		double pos2[] = { objectToMirrors, sepDist, 0};
+		double focus2[] = { objectToMirrors - focusDist, sepDist, 0 };
 		double normal2[] = {0, -1, 0};
 		//*/
 		
@@ -91,18 +93,23 @@ public class ParabolicImagingExample {
 		double normal2[] = {-1, 0, 0};
 		//*/
 		
-		Paraboloid paraboloid1 = new Paraboloid("Paraboloid", pos, focus, normal, 0.050, null, null, Reflector.ideal());
+		double apertureDiameter = 0.030;
+		double[] aperaturePos = { objectToMirrors - aperatureBeforeMirror, 0, 0};
+		Iris iris1 = new Iris("iris1", aperaturePos, new double[] {1,0,0}, apertureDiameter/2*1.5, apertureDiameter/2, Absorber.ideal());
+		Disc target1 = new Disc("target1", aperaturePos, new double[] {-1,0,0}, apertureDiameter/2, NullInterface.ideal());
 		
-		Paraboloid paraboloid2 = new Paraboloid("Paraboloid", pos2, focus2, normal2, 0.050, null, null, Reflector.ideal());
+		Paraboloid paraboloid1 = new Paraboloid("Paraboloid", pos, focus, normal, 0.030, null, null, Reflector.ideal());
+		
+		Paraboloid paraboloid2 = new Paraboloid("Paraboloid", pos2, focus2, normal2, 0.030, null, null, Reflector.ideal());
 		
 		//lens.shift(new double[]{ u, 0, 0 });
 		
-		Square imgPlane = new Square("imgPlane", new double[]{ 2.4, sepDist, 0 }, new double[]{ -1, 0, 0 }, new double[]{ 0, 1, 0 }, 0.400, 0.400, Absorber.ideal());
+		Square imgPlane = new Square("imgPlane", new double[]{ objectToMirrors - imageDist, sepDist, 0 }, new double[]{ -1, 0, 0 }, new double[]{ 0, 1, 0 }, 0.100, 0.100, Absorber.ideal());
 		
 		Optic all = new Optic("all", new Element[]{ backPlane, target1, iris1, paraboloid1, paraboloid2, imgPlane });
 		
 		
-		VRMLDrawer vrmlOut = new VRMLDrawer(outPath + "/imgTest.vrml", 0.5);
+		VRMLDrawer vrmlOut = new VRMLDrawer(outPath + "/imgTest.vrml", 0.05);
 		if(vrmlOut != null) {
 			vrmlOut.setDrawPolarisationFrames(false);
 			vrmlOut.setSkipRays(47);
@@ -144,7 +151,7 @@ public class ParabolicImagingExample {
 			}
 		}
 		
-		Util.throwAwayIrises(all, 100);
+		//Util.throwAwayIrises(all, 100);
 		
 		if(vrmlOut != null) {
 			vrmlOut.drawOptic(all);
