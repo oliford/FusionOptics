@@ -38,10 +38,9 @@ import binaryMatrixFile.BinaryMatrixFile;
 import oneLiners.OneLiners;
 
 
-/** Simple imaging by a single lens.
+/** Imaging by two parabolic mirrors
  * 
  * For VRML output only. 
- * See GeneratePSFInterpolation for the full fast imaging exercise. 
  * 
  * @author oliford
  *
@@ -98,12 +97,10 @@ public class ParabolicImagingExample {
 		Iris iris1 = new Iris("iris1", aperaturePos, new double[] {1,0,0}, apertureDiameter/2*1.5, apertureDiameter/2, Absorber.ideal());
 		Disc target1 = new Disc("target1", aperaturePos, new double[] {-1,0,0}, apertureDiameter/2, NullInterface.ideal());
 		
-		Paraboloid paraboloid1 = new Paraboloid("Paraboloid", pos, focus, normal, 0.030, null, null, Reflector.ideal());
+		Paraboloid paraboloid1 = new Paraboloid("Paraboloid1", pos, focus, normal, 0.030, null, null, Reflector.ideal());
 		
-		Paraboloid paraboloid2 = new Paraboloid("Paraboloid", pos2, focus2, normal2, 0.030, null, null, Reflector.ideal());
-		
-		//lens.shift(new double[]{ u, 0, 0 });
-		
+		Paraboloid paraboloid2 = new Paraboloid("Paraboloid2", pos2, focus2, normal2, 0.030, null, null, Reflector.ideal());
+				
 		Square imgPlane = new Square("imgPlane", new double[]{ objectToMirrors - imageDist, sepDist, 0 }, new double[]{ -1, 0, 0 }, new double[]{ 0, 1, 0 }, 0.100, 0.100, Absorber.ideal());
 		
 		Optic all = new Optic("all", new Element[]{ backPlane, target1, iris1, paraboloid1, paraboloid2, imgPlane });
