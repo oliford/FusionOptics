@@ -173,52 +173,61 @@ public class TruncatedCylinder extends Surface {
 	
 	@Override
 	public List<double[][]> draw() {
-		int nPointsPerSection = (this.nPointsPerSection > 0) ? this.nPointsPerSection : 5 + (approxDrawQuality * 50 / 100); //min 5, max 55  at def(10)
-		int nSections = (this.nSections > 0) ? this.nSections : 1 + (approxDrawQuality * 1); // min 101, max 33, 11 at def(10)
+		int nPointsPerSection = (this.nPointsPerSection > 0) ? this.nPointsPerSection : 5 + (approxDrawQuality * 10 / 100); //min 5, max 55  at def(10)
+		int nSections = (this.nSections > 0) ? this.nSections : 1 + (approxDrawQuality * 10);
 		
 		ArrayList<double[][]> lines = new ArrayList<double[][]>();
 		
+
 		for(int i=0; i < nSections; i++){
 			double phi0 = i * 2 * Math.PI / nSections;
 			double phi1 = (i+1) * 2 * Math.PI / nSections;
 			
 			double dPhi = (phi1 - phi0) / (nPointsPerSection - 1);
 			double line[][] = new double[3][nPointsPerSection*2 + 1];
+			int nPointsOutOfRange = 0;
 			for(int j=0; j < nPointsPerSection; j++){
 				double subPhi = j * dPhi;
+
+				double u = radius * Math.cos(phi0+subPhi);
+				double r = radius * Math.sin(phi0+subPhi);
+				if(u < uMin || u > uMax || r < rMin || r > rMax)
+					nPointsOutOfRange++;
+				
+				u = FastMath.max(u, uMin);
+				u = FastMath.min(u, uMax);
+				r = FastMath.max(r, rMin);
+				r = FastMath.min(r, rMax);
 				
 				for(int k=0; k < 3; k++){
-					double u = radius * Math.cos(phi0+subPhi);
-					double r = radius * Math.sin(phi0+subPhi);
-					u = FastMath.max(u, uMin);
-					u = FastMath.min(u, uMax);
-					r = FastMath.max(r, rMin);
-					r = FastMath.min(r, rMax);
 					line[k][j] = centre[k] - length/2 * axis[k]
 				                           + u * up[k]
 				                           + r * right[k];
 				}
-				             
+
+				u = radius * Math.cos(phi1-subPhi);
+				r = radius * Math.sin(phi1-subPhi);
+				if(u < uMin || u > uMax || r < rMin || r > rMax)
+					nPointsOutOfRange++;
+				
+				u = FastMath.max(u, uMin);
+				u = FastMath.min(u, uMax);
+				r = FastMath.max(r, rMin);
+				r = FastMath.min(r, rMax);
+				
 				for(int k=0; k < 3; k++){
-					double u = radius * Math.cos(phi1-subPhi);
-					double r = radius * Math.sin(phi1-subPhi);
-					u = FastMath.max(u, uMin);
-					u = FastMath.min(u, uMax);
-					r = FastMath.max(r, rMin);
-					r = FastMath.min(r, rMax);
 					line[k][nPointsPerSection+j] = centre[k] + length/2 * axis[k]
 				                           + u * up[k]
 				                           + r * right[k];
 				}
-			
-	
 			}
 
 			line[0][nPointsPerSection*2] = line[0][0];
 			line[1][nPointsPerSection*2] = line[1][0];
 			line[2][nPointsPerSection*2] = line[2][0];
 			
-			lines.add(line);
+			if(nPointsOutOfRange == 0)
+				lines.add(line);
 		}
 		
 		return lines;
