@@ -11,7 +11,6 @@ import binaryMatrixFile.BinaryMatrixFile;
 import oneLiners.OneLiners;
 import algorithmrepository.Algorithms;
 import algorithmrepository.Interpolation1D;
-import algorithmrepository.Interpolation2D;
 import algorithmrepository.LinearInterpolation1D;
 import algorithmrepository.LinearInterpolation2D;
 import algorithmrepository.exceptions.NotImplementedException;
