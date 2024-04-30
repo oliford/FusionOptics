@@ -1,6 +1,6 @@
 package fusionOptics.birefringence;
 
-import binaryMatrixFile.BinaryMatrixFile;
+import binaryMatrixFile.AsciiMatrixFile;
 import fusionOptics.MinervaOpticsSettings;
 import fusionOptics.OpticApprox;
 import fusionOptics.Util;
@@ -129,14 +129,14 @@ public class DisplacerImaging {
 		scanAll(true);
 		/*
 		double startPos = imagePlane.getCentre()[0];
-		BinaryMatrixFile.mustWrite(outPath + "/focusScan.bin", focusScan);
+		AsciiMatrixFile.mustWrite(outPath + "/focusScan.txt", focusScan);
 		
 		String outRoot = outPath;
 		for(int i=0; i < focusScan.length; i++){
 			System.out.println("Scan " + i + ": dx = " + focusScan[i]);
 			imagePlane.setCentre(new double[]{ startPos + focusScan[i], 0, 0 });			
 			double contrast[][] = scanAll(false);
-			BinaryMatrixFile.mustWrite(outPath + "/contrast_"+i+".bin", contrast, false);
+			AsciiMatrixFile.mustWrite(outPath + "/contrast_"+i+".txt", contrast, false);
 		}
 		//*/
 	}
@@ -211,9 +211,9 @@ public class DisplacerImaging {
 			svgOut.destroy();
 		
 		if(output){
-			BinaryMatrixFile.mustWrite(outPath + "/VeirasFig9aCalc.bin", phsCalc, false);		
-			BinaryMatrixFile.mustWrite(outPath + "/VeirasFig9aTarg.bin", phsTarg, false);
-			BinaryMatrixFile.mustWrite(outPath + "/contrast.bin", contrast, false);
+			AsciiMatrixFile.mustWrite(outPath + "/VeirasFig9aCalc.txt", phsCalc, false);		
+			AsciiMatrixFile.mustWrite(outPath + "/VeirasFig9aTarg.txt", phsTarg, false);
+			AsciiMatrixFile.mustWrite(outPath + "/contrast.txt", contrast, false);
 		}
 	
 		return contrast;
