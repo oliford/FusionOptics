@@ -3,23 +3,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>fusionOptics</groupId>
 	<artifactId>FusionOptics</artifactId>
-	<version>1.0.4</version>
+	<version>1.1.0</version>
     <scm>
-		<connection>scm:git:ssh://git@git.ipp-hgw.mpg.de/FusionOptics/${project.name}.git</connection>
-    	<developerConnection>scm:git:ssh://git@git.ipp-hgw.mpg.de/FusionOptics/${project.name}.git</developerConnection>    	
-		<url>https://gitlab.ipp-hgw.mpg.de/FusionOptics/${project.name}/tree/master</url>
+		<connection>scm:git:ssh://git@github.com/oliford/${project.name}.git</connection>
+    	<developerConnection>scm:git:ssh://git@github.com/oliford/${project.name}.git</developerConnection>    	
+		<url>https://github.com/oliford/${project.name}/tree/master</url>
 	</scm>
 		<issueManagement>
-		<url>https://gitlab.ipp-hgw.mpg.de/ImageProc/${project.name}/issues</url>
+		<url>https://github.com/oliford/${project.name}/issues</url>
 		<system>GitLab Issues</system>
 	</issueManagement>
-	<distributionManagement>
-		<repository>
-			<id>minerva-central</id>
-			<url>https://nexus.seed-escience.org/repository/maven-releases/</url>
-		</repository>
-	</distributionManagement>
-
 	<dependencies>
 		<dependency>
 			<groupId>net.jafama</groupId>
