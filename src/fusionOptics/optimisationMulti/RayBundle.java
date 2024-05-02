@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.jafama.FastMath;
-import otherSupport.RandomManager;
-import binaryMatrixFile.BinaryMatrixWriter;
+import uk.co.oliford.jolu.BinaryMatrixWriter;
+import uk.co.oliford.jolu.RandomManager;
 import fusionOptics.Util;
 import fusionOptics.collection.IntersectionProcessor;
 import fusionOptics.drawing.RayDrawer;

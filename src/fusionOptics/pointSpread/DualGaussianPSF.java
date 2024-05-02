@@ -2,10 +2,8 @@ package fusionOptics.pointSpread;
 
 import java.text.DecimalFormat;
 
-import otherSupport.RandomManager;
+import uk.co.oliford.jolu.RandomManager;
 
-
-import algorithmrepository.exceptions.NotImplementedException;
 
 /** PSF Characterisation using two 2D gaussians.
  * 
@@ -89,7 +87,7 @@ public class DualGaussianPSF extends PointSpreadFunction{
 	@Override
 	public void generatePolarisedPoints(int nPoints, double[][] pos,
 			double[][][] E) {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 
 	@Override

@@ -44,15 +44,11 @@ import fusionOptics.types.Optic;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
 import fusionOptics.types.Surface;
-
-import binaryMatrixFile.BinaryMatrixFile;
-
-import otherSupport.ColorMaps;
-import otherSupport.RandomManager;
-import otherSupport.StatusOutput;
-
-import oneLiners.OneLiners;
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.ColorMaps;
+import uk.co.oliford.jolu.OneLiners;
+import uk.co.oliford.jolu.RandomManager;
+import uk.co.oliford.jolu.StatusOutput;
 import junit.framework.TestCase;
 /**
  * Test that the PSF Mueller matrix determination

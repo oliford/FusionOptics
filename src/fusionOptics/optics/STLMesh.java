@@ -2,12 +2,12 @@ package fusionOptics.optics;
 
 import java.io.IOException;
 
-import otherSupport.BinarySTLFile;
-import otherSupport.BinarySTLFile.Triangles;
 import fusionOptics.Util;
 import fusionOptics.interfaces.Absorber;
 import fusionOptics.surfaces.Triangle;
 import fusionOptics.types.Optic;
+import uk.co.oliford.jolu.BinarySTLFile;
+import uk.co.oliford.jolu.BinarySTLFile.Triangles;
 
 public class STLMesh  extends Optic {
 			

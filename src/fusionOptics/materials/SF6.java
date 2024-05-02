@@ -1,8 +1,11 @@
 package fusionOptics.materials;
 
 import java.util.Arrays;
+
+import algorithmrepository.ExtrapolationMode;
+import algorithmrepository.Interpolation1D;
+import algorithmrepository.InterpolationMode;
 import fusionOptics.types.Material;
-import algorithmrepository.LinearInterpolation1D;
 import net.jafama.FastMath;
 
 /** This is the SF6 Schott glass
@@ -39,7 +42,7 @@ public class SF6 extends Material {
 	
 	
 	/** This data from  http://www.uqgoptics.com/materials_glasses_schott_SF6.aspx and is for 25mm thickness */
-	LinearInterpolation1D transmittance = new LinearInterpolation1D(tL, tV);
+	Interpolation1D transmittance = new Interpolation1D(tL, tV, InterpolationMode.LINEAR, ExtrapolationMode.EXCEPTION);
 	
 	@Override
 	public int getNAxes() {

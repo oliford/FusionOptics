@@ -4,16 +4,14 @@ import java.io.Serializable;
 
 import fusionOptics.types.Pol;
 
-import otherSupport.RandomManager;
-
-import binaryMatrixFile.BinaryMatrixFile;
-
-import oneLiners.OneLiners;
+import uk.co.oliford.jolu.BinaryMatrixFile;
+import uk.co.oliford.jolu.OneLiners;
+import uk.co.oliford.jolu.RandomManager;
 import algorithmrepository.Algorithms;
+import algorithmrepository.ExtrapolationMode;
 import algorithmrepository.Interpolation1D;
-import algorithmrepository.LinearInterpolation1D;
-import algorithmrepository.LinearInterpolation2D;
-import algorithmrepository.exceptions.NotImplementedException;
+import algorithmrepository.Interpolation2D;
+import algorithmrepository.InterpolationMode;
 
 /** Represents the PSF directly with the originally collected points */
 public class MiniImagePSF extends PointSpreadFunction {
@@ -25,10 +23,10 @@ public class MiniImagePSF extends PointSpreadFunction {
 	
 	private double pdf[][];
 	
-	LinearInterpolation2D imageInterp;
+	Interpolation2D imageInterp;
 	
-	LinearInterpolation1D colSumCDF;
-	LinearInterpolation1D colCDFs[];
+	Interpolation1D colSumCDF;
+	Interpolation1D colCDFs[];
 	
 	public MiniImagePSF(int nX, int nY) {
 		this.nX = nX;
@@ -72,7 +70,7 @@ public class MiniImagePSF extends PointSpreadFunction {
 		}
 		
 		colSumCDF = null;
-		imageInterp = new LinearInterpolation2D(x, y, pdf, 0.0);
+		imageInterp = new Interpolation2D(x, y, pdf, InterpolationMode.LINEAR, ExtrapolationMode.CONSTANT, 0.0);
 		
 		
 	}
@@ -81,7 +79,7 @@ public class MiniImagePSF extends PointSpreadFunction {
 	public boolean isEmpty() { return pdf == null; }
 	
 	private void calcCDFs(){
-		colCDFs = new LinearInterpolation1D[nX];
+		colCDFs = new Interpolation1D[nX];
 		
 		//the CDFs are build around the grid cell concept of the P[][]
 		//not the intepolatable PDF.
@@ -102,7 +100,7 @@ public class MiniImagePSF extends PointSpreadFunction {
 				for(int iY=0; iY < (nY-1); iY++){
 					cdf[iY] /= colSum;
 				}
-				colCDFs[iX] = new LinearInterpolation1D(cdf, y);
+				colCDFs[iX] = new Interpolation1D(cdf, y, InterpolationMode.LINEAR, ExtrapolationMode.EXCEPTION);
 			}else{
 				colCDFs[iX] = null; //no probability at all
 			}
@@ -113,7 +111,7 @@ public class MiniImagePSF extends PointSpreadFunction {
 		for(int iX=0; iX < (nX-1); iX++){
 			csCDF[iX] /= csCDF[nX-2];
 		}	
-		colSumCDF = new LinearInterpolation1D(csCDF, x);
+		colSumCDF = new Interpolation1D(csCDF, x,  InterpolationMode.LINEAR, ExtrapolationMode.EXCEPTION);
 	}
 
 	@Override
@@ -138,7 +136,7 @@ public class MiniImagePSF extends PointSpreadFunction {
 	@Override
 	public void generatePolarisedPoints(int nPoints, double[][] pos,
 			double[][][] E) {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 	
 	public double[][] addToGrid(double[] x, double[] y, double[][] G, double I0) {
@@ -216,7 +214,7 @@ public class MiniImagePSF extends PointSpreadFunction {
 
 	@Override
 	public void setCharacterisationData(double[] data) {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 	
 	@Override

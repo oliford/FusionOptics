@@ -32,14 +32,10 @@ import fusionOptics.collection.IntersectionProcessor;
 import fusionOptics.pointSpread.PointSpreadFunction;
 import fusionOptics.surfaces.Square;
 import fusionOptics.tracer.Tracer;
-
-import oneLiners.OneLiners;
-
-import binaryMatrixFile.BinaryMatrixFile;
-import binaryMatrixFile.BinaryMatrixWriter;
-
-
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.BinaryMatrixFile;
+import uk.co.oliford.jolu.BinaryMatrixWriter;
+import uk.co.oliford.jolu.OneLiners;
 
 /** Describes the striaght propagation of a ray through a medium*/
 public class RaySegment {

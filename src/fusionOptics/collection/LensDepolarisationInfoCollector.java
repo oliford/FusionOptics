@@ -5,10 +5,10 @@ import fusionOptics.surfaces.Plane;
 import fusionOptics.types.Intersection;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
-import binaryMatrixFile.BinaryMatrixFile;
-import binaryMatrixFile.BinaryMatrixWriter;
 import net.jafama.FastMath;
-import oneLiners.OneLiners;
+import uk.co.oliford.jolu.BinaryMatrixFile;
+import uk.co.oliford.jolu.BinaryMatrixWriter;
+import uk.co.oliford.jolu.OneLiners;
 
 /** Collects an image of the average polarisation at a given polarisation plane,
  *  w.r.t. the position at another given plane.

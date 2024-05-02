@@ -4,15 +4,10 @@ import java.io.Serializable;
 
 import fusionOptics.types.Pol;
 
-import otherSupport.RandomManager;
-
-import binaryMatrixFile.BinaryMatrixFile;
-
+import uk.co.oliford.jolu.BinaryMatrixFile;
+import uk.co.oliford.jolu.OneLiners;
+import uk.co.oliford.jolu.RandomManager;
 import algorithmrepository.Algorithms;
-import algorithmrepository.exceptions.NotImplementedException;
-
-import oneLiners.OneLiners;
-
 import net.jafama.FastMath;
 
 /** Simple Gaussian intensity PSF.
@@ -149,13 +144,13 @@ public class GaussianPSF extends PointSpreadFunction {
 	@Override
 	public void generatePolarisedPoints(int nPoints, double[][] pos,
 			double[][][] E) {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 
 	
 	public void calcBasisVecs() {
 		
-		double ret[][] = Algorithms.eigenVecsAndVals2x2(new double[][]{{cXX,cXY*1}, {cXY,cYY}});
+		double ret[][] = OneLiners.eigenVecsAndVals2x2(new double[][]{{cXX,cXY*1}, {cXY,cYY}});
 
 		ux = ret[0][0];
 		uy = ret[0][1];

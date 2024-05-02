@@ -3,10 +3,8 @@ package fusionOptics.materials;
 import java.util.Arrays;
 
 import fusionOptics.types.Material;
-
-import binaryMatrixFile.BinaryMatrixFile;
-import algorithmrepository.exceptions.NotImplementedException;
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.BinaryMatrixFile;
 
 /** For materials with a refractive index calculated from the Sellmeier equation */ 
 public class SellmeierBased extends Material {
@@ -88,12 +86,12 @@ public class SellmeierBased extends Material {
 
 	@Override
 	public double getTransmission(int modeNumber, double wavelength, double temperature) {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public double getVerdetConstant(int modeNumber, double wavelen, double temperature) {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 	
 

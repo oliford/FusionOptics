@@ -3,6 +3,8 @@ package fusionOptics.tracer;
 import java.util.List;
 
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.ColorMaps;
+import uk.co.oliford.jolu.OneLiners;
 import junit.framework.TestCase;
 import fusionOptics.MinervaOpticsSettings;
 import fusionOptics.drawing.SVGRayDrawing;
@@ -19,8 +21,6 @@ import fusionOptics.types.Medium;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
-import otherSupport.ColorMaps;
-import oneLiners.OneLiners;
 
 /** Test Fermat's principle - The total optical path length (wave count + phase) should be the same for
  * all rays imaged onto the same point.

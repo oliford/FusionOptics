@@ -6,9 +6,9 @@ import fusionOptics.surfaces.Aspheric;
 import fusionOptics.surfaces.Dish;
 import fusionOptics.surfaces.Plane;
 import fusionOptics.types.Element;
-import oneLiners.OneLiners;
 import seed.digeom.IFunction;
 import seed.optimization.Optimizer;
+import uk.co.oliford.jolu.OneLiners;
 
 
 /** Optimiser to bend a single apsherical surface to get the best focus.  

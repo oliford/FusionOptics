@@ -2,7 +2,10 @@ package fusionOptics.collection;
 
 import java.util.ArrayList;
 
-import oneLiners.OneLiners;
+import algorithmrepository.Algorithms;
+import algorithmrepository.ExtrapolationMode;
+import algorithmrepository.Interpolation1D;
+import algorithmrepository.InterpolationMode;
 import fusionOptics.Util;
 import fusionOptics.interfaces.NullInterface;
 import fusionOptics.surfaces.Cylinder;
@@ -11,10 +14,9 @@ import fusionOptics.surfaces.Plane;
 import fusionOptics.types.Element;
 import fusionOptics.types.Intersection;
 import fusionOptics.types.Optic;
-import algorithmrepository.Algorithms;
-import algorithmrepository.LinearInterpolation1D;
-import binaryMatrixFile.BinaryMatrixWriter;
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.BinaryMatrixWriter;
+import uk.co.oliford.jolu.OneLiners;
 
 /** Collects all vectors and positions of the light hitting a surface.
  * Can be used to find the approx optimal focus point and max/average light cones.
@@ -106,7 +108,7 @@ public class LightConeInfo implements IntersectionProcessor {
 		Algorithms.quicksort(angles, null);
 		
 		double fraction[] = OneLiners.linSpace(0.0, 1.0, angles.length);
-		LinearInterpolation1D interp = new LinearInterpolation1D(fraction, angles);
+		Interpolation1D interp = new Interpolation1D(fraction, angles, InterpolationMode.LINEAR, ExtrapolationMode.LINEAR);
 		return interp.eval(rayFraction);		
 	}
 	

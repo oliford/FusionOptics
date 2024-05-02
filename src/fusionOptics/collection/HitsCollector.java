@@ -4,7 +4,7 @@ import fusionOptics.surfaces.Plane;
 import fusionOptics.types.Intersection;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
-import binaryMatrixFile.BinaryMatrixWriter;
+import uk.co.oliford.jolu.BinaryMatrixWriter;
 
 /** Writes full hit information straight to a Binary matrix file */
 public class HitsCollector implements IntersectionProcessor {

@@ -9,10 +9,9 @@ import fusionOptics.surfaces.Plane;
 import fusionOptics.types.Element;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Surface;
-
-import oneLiners.OneLiners;
 import seed.digeom.IFunction;
 import seed.optimization.Optimizer;
+import uk.co.oliford.jolu.OneLiners;
 
 
 /** Optimiser to move given elements along their normals, or first surface normals to achieve best focus

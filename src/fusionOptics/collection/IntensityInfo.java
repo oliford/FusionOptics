@@ -1,6 +1,7 @@
 package fusionOptics.collection;
 
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.ScientificNumberFormat;
 
 import java.security.KeyStore.Entry;
 import java.util.ArrayList;
@@ -11,7 +12,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-import otherSupport.ScientificNumberFormat;
 
 import fusionOptics.Util;
 import fusionOptics.surfaces.Square;

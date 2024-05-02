@@ -21,7 +21,6 @@
 package fusionOptics.materials;
 
 import fusionOptics.types.Material;
-import algorithmrepository.exceptions.NotImplementedException;
 
 /** Ideal glass with fixed refractive index and transmission 
  *  coefficient for all wavelengths and temperatures.
@@ -59,7 +58,7 @@ public class IsotropicFixedIndexGlass extends Material {
 
 	@Override
 	public double getVerdetConstant(int modeNumber, double wavelen, double temperature) { 
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 		}
 
 

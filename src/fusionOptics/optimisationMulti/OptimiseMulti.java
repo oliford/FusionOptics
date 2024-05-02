@@ -6,17 +6,14 @@ import java.util.List;
 
 import javax.print.attribute.standard.Media;
 
-import oneLiners.OneLiners;
-import otherSupport.ColorMaps;
-
-import binaryMatrixFile.BinaryMatrixWriter;
-
 import seed.digeom.FunctionND;
 import seed.digeom.IDomain;
 import seed.digeom.RectangularDomain;
 import seed.optimization.HookeAndJeeves;
 import seed.optimization.Optimizer;
-
+import uk.co.oliford.jolu.BinaryMatrixWriter;
+import uk.co.oliford.jolu.ColorMaps;
+import uk.co.oliford.jolu.OneLiners;
 import fusionOptics.Util;
 import fusionOptics.collection.IntersectionProcessor;
 import fusionOptics.drawing.RayDrawer;

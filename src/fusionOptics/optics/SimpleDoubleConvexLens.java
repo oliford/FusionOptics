@@ -13,7 +13,6 @@ import fusionOptics.types.Medium;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Surface;
 
-import algorithmrepository.exceptions.NotImplementedException;
 
 /** Two equally curved spherical surfaces 
  * 

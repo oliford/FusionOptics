@@ -12,7 +12,6 @@ import fusionOptics.types.Optic;
 import fusionOptics.types.RaySegment;
 import fusionOptics.types.Surface;
 
-import algorithmrepository.exceptions.NotImplementedException;
 
 
 /** Base class and common code for simple ray drawing 
@@ -110,7 +109,7 @@ public abstract class LineDrawer implements RayDrawer {
 			});
 		}
 		if(drawPolarisationFrames){
-			throw new NotImplementedException();
+			throw new UnsupportedOperationException();
 		
 		/*	double right[] = Util.cross(ray.dir, ray.up);
 			double linPol = FastMath.sqrt(ray.stokes[1]*ray.stokes[1] + ray.stokes[2]*ray.stokes[2]);

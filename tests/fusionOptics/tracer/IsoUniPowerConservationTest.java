@@ -28,12 +28,6 @@ import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
 import fusionOptics.types.Surface;
 
-import otherSupport.ColorMaps;
-import otherSupport.RandomManager;
-
-import binaryMatrixFile.BinaryMatrixFile;
-
-import oneLiners.OneLiners;
 import net.jafama.FastMath;
 import junit.framework.TestCase;
 

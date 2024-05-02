@@ -9,8 +9,8 @@ import fusionOptics.tracer.Tracer;
 import fusionOptics.types.Intersection;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
-import otherSupport.ColorMaps;
 import junit.framework.TestCase;
+import uk.co.oliford.jolu.ColorMaps;
 
 /** Fires lots of random rays at a fairly bends aspheric surface
  * and tests that the returned intersection point is near the surface.

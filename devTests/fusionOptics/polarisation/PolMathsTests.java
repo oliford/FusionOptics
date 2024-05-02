@@ -2,7 +2,7 @@ package fusionOptics.polarisation;
 
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
-import binaryMatrixFile.BinaryMatrixFile;
+import uk.co.oliford.jolu.BinaryMatrixFile;
 
 /** Low level test/dev platform for polarisation maths in Pol class */
 public class PolMathsTests {

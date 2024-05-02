@@ -1,6 +1,5 @@
 package fusionOptics.materials;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import fusionOptics.types.Material;
 
 public class OharaS_TIH6 extends DispersionCoefficientBased {

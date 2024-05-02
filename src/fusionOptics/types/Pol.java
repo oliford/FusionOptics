@@ -27,8 +27,6 @@ import fusionOptics.Util;
 import fusionOptics.surfaces.Plane;
 import fusionOptics.surfaces.Square;
 
-import otherSupport.Profiler;
-
 import net.jafama.FastMath;
 
 

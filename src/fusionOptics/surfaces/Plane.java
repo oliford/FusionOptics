@@ -12,7 +12,6 @@ import fusionOptics.types.Intersection;
 import fusionOptics.types.Medium;
 import fusionOptics.types.RaySegment;
 import fusionOptics.types.Surface;
-import algorithmrepository.exceptions.NotImplementedException;
 
 
 

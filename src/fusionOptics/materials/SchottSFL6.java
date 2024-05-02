@@ -2,9 +2,11 @@ package fusionOptics.materials;
 
 import java.util.Arrays;
 
+import algorithmrepository.ExtrapolationMode;
+import algorithmrepository.Interpolation1D;
+import algorithmrepository.InterpolationMode;
 import fusionOptics.types.Material;
 
-import algorithmrepository.LinearInterpolation1D;
 import net.jafama.FastMath;
 
 /** This is the SFL6 Schott glass, which I'm assuming is the 
@@ -54,7 +56,7 @@ public class SchottSFL6 extends Material {
 					0.994, 0.996, 0.997, 0.998, 0.998,
 					0.998, 0.998, 0.989, 0.965, }; 
 
-	LinearInterpolation1D transmittance = new LinearInterpolation1D(tL, tV);
+	Interpolation1D transmittance = new Interpolation1D(tL, tV, InterpolationMode.LINEAR, ExtrapolationMode.EXCEPTION);
 		
 	
 	@Override

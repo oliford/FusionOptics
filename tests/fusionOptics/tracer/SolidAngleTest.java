@@ -2,24 +2,16 @@ package fusionOptics.tracer;
 
 
 import net.jafama.FastMath;
-
-import java.util.Vector;
-
 import junit.framework.TestCase;
 import fusionOptics.MinervaOpticsSettings;
 import fusionOptics.Util;
 import fusionOptics.collection.IntensityInfo;
 import fusionOptics.interfaces.Absorber;
-import fusionOptics.interfaces.Reflector;
-import fusionOptics.surfaces.Disc;
 import fusionOptics.surfaces.Iris;
 import fusionOptics.surfaces.Square;
-import fusionOptics.tracer.Tracer;
 import fusionOptics.types.Element;
 import fusionOptics.types.Optic;
 import fusionOptics.types.RaySegment;
-import oneLiners.OneLiners;
-import svg.SVGSplitView3D;
 
 /** Test the target and effective solid angle calculations */
 public class SolidAngleTest extends TestCase {

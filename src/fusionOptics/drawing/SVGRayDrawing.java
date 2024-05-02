@@ -10,11 +10,8 @@ import fusionOptics.types.Optic;
 import fusionOptics.types.RaySegment;
 import fusionOptics.types.Surface;
 
-import algorithmrepository.Algorithms;
-
-import oneLiners.OneLiners;
-
-import svg.SVGSplitView3D;
+import uk.co.oliford.jolu.OneLiners;
+import uk.co.oliford.svg.SVGSplitView3D;
 
 /** Simple ray drawing to SVG, without polarisation information. */
 public class SVGRayDrawing extends LineDrawer {

@@ -8,8 +8,7 @@ import java.util.List;
 
 import fusionOptics.types.Optic;
 import fusionOptics.types.RaySegment;
-
-import oneLiners.OneLiners;
+import uk.co.oliford.jolu.OneLiners;
 
 
 

@@ -17,9 +17,8 @@ import fusionOptics.types.Medium;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
-import binaryMatrixFile.BinaryMatrixFile;
-import oneLiners.OneLiners;
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.BinaryMatrixFile;
 import junit.framework.TestCase;
 
 /** Check the maps of phase difference match the formula/graph in F.E.Veiras and

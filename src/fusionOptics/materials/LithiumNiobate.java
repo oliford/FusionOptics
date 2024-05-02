@@ -20,7 +20,6 @@
  */
 package fusionOptics.materials;
 
-import algorithmrepository.exceptions.NotImplementedException;
 
 public class LithiumNiobate extends SellmeierBased {
 	
@@ -74,7 +73,7 @@ public class LithiumNiobate extends SellmeierBased {
 		 *   which is much bigger.
 		 *   
 	*/
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 	
 	@Override

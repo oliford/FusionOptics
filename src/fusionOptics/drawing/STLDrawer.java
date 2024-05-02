@@ -4,13 +4,13 @@ import java.lang.annotation.ElementType;
 import java.util.ArrayList;
 import java.util.List;
 
-import oneLiners.OneLiners;
-import otherSupport.BinarySTLFile;
-import otherSupport.BinarySTLFile.Triangles;
 import fusionOptics.Util;
 import fusionOptics.types.Element;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Surface;
+import uk.co.oliford.jolu.BinarySTLFile;
+import uk.co.oliford.jolu.OneLiners;
+import uk.co.oliford.jolu.BinarySTLFile.Triangles;
 
 /** Make STL MESH from drawings (surfaces only)
  */

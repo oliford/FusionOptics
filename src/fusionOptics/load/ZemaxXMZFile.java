@@ -23,9 +23,8 @@ import fusionOptics.types.Medium;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Surface;
 
-import otherSupport.SimpleScriptParser;
-
-import oneLiners.OneLiners;
+import uk.co.oliford.jolu.SimpleScriptParser;
+import uk.co.oliford.jolu.OneLiners;
 
 
 /** Really basic loading of Zemax ZMX file 

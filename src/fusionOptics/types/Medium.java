@@ -5,7 +5,6 @@ import java.util.Arrays;
 import fusionOptics.Util;
 import fusionOptics.interfaces.IsoUniaxialInterface;
 
-import algorithmrepository.exceptions.NotImplementedException;
 import net.jafama.DoubleWrapper;
 import net.jafama.FastMath;
 

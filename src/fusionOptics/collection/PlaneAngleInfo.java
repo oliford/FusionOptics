@@ -3,8 +3,8 @@ package fusionOptics.collection;
 import fusionOptics.Util;
 import fusionOptics.surfaces.Plane;
 import fusionOptics.types.Intersection;
-import binaryMatrixFile.BinaryMatrixWriter;
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.BinaryMatrixWriter;
 
 /** Collects statistics of the angle of rays through a given surface */
 public class PlaneAngleInfo implements IntersectionProcessor {

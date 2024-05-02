@@ -33,13 +33,10 @@ import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
 import fusionOptics.types.Surface;
 
-import otherSupport.ColorMaps;
-import otherSupport.RandomManager;
-
-import binaryMatrixFile.BinaryMatrixFile;
-import binaryMatrixFile.BinaryMatrixWriter;
-import oneLiners.OneLiners;
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.BinaryMatrixWriter;
+import uk.co.oliford.jolu.ColorMaps;
+import uk.co.oliford.jolu.OneLiners;
 import junit.framework.TestCase;
 
 /** Tests for splitting of rays by refraction in birefringent materials

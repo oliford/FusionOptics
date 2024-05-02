@@ -2,8 +2,8 @@ package fusionOptics.collection;
 
 import fusionOptics.surfaces.Plane;
 import fusionOptics.types.Intersection;
-import binaryMatrixFile.BinaryMatrixFile;
-import oneLiners.OneLiners;
+import uk.co.oliford.jolu.BinaryMatrixFile;
+import uk.co.oliford.jolu.OneLiners;
 
 /** Intersection processor which simply builds and image
  * which can be written to a binary file. 

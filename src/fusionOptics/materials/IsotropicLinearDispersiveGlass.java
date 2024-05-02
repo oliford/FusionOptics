@@ -21,8 +21,6 @@
 package fusionOptics.materials;
 
 import fusionOptics.types.Material;
-import oneLiners.OneLiners;
-import algorithmrepository.exceptions.NotImplementedException;
 
 /** Ideal glass with refractive index that has a linear dependence on wavelength.
  *
@@ -67,7 +65,7 @@ public class IsotropicLinearDispersiveGlass extends Material {
 
 	@Override
 	public double getVerdetConstant(int modeNumber, double wavelen, double temperature) { 
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 		}
 
 	public void setRefractiveIndexD(double nd) { set(nd, abbeNumber_d); }

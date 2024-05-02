@@ -40,11 +40,7 @@ import fusionOptics.types.Optic;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
 import fusionOptics.types.Surface;
-import otherSupport.ColorMaps;
-import algorithmrepository.Algorithms;
-import algorithmrepository.exceptions.NotImplementedException;
-import oneLiners.OneLiners;
-import seed.matrix.Mat;
+import uk.co.oliford.jolu.OneLiners;
 
 
 

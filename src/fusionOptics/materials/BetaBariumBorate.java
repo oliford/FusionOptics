@@ -20,8 +20,8 @@
  */
 package fusionOptics.materials;
 
-import binaryMatrixFile.BinaryMatrixFile;
-import oneLiners.OneLiners;
+import uk.co.oliford.jolu.BinaryMatrixFile;
+import uk.co.oliford.jolu.OneLiners;
 
 /** Beta Barium Borate
  * 

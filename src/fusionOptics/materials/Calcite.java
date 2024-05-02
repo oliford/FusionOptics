@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import fusionOptics.types.Material;
 
-import algorithmrepository.exceptions.NotImplementedException;
 import net.jafama.FastMath;
 
 /** Calcite Crystal CaCO3
@@ -39,12 +38,12 @@ public class Calcite extends Material {
 	@Override
 	public double getTransmission(int modeNumber, double wavelength,
 			double temperature) {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public double getVerdetConstant(int modeNumber, double wavelen, double temperature) {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 		//return verdetConstFromBecquerelRelation(modeNumber, wavelen, temperature);
 	}
 	

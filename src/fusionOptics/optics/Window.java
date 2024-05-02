@@ -13,8 +13,6 @@ import fusionOptics.types.Medium;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Surface;
 
-import algorithmrepository.exceptions.NotImplementedException;
-
 public class Window extends Optic {
 
 	private double centre[];

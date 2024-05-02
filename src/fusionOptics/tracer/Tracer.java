@@ -22,6 +22,7 @@ package fusionOptics.tracer;
 
 
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.RandomManager;
 
 import java.util.List;
 
@@ -35,7 +36,6 @@ import fusionOptics.types.Medium;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
 import fusionOptics.types.Surface;
-import otherSupport.RandomManager;
 
 
 /**

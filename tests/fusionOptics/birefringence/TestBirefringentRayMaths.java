@@ -20,11 +20,10 @@ import fusionOptics.types.Optic;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
 
-import otherSupport.ScientificNumberFormat;
-import binaryMatrixFile.BinaryMatrixFile;
 import algorithmrepository.Algorithms;
-import oneLiners.OneLiners;
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.BinaryMatrixFile;
+import uk.co.oliford.jolu.OneLiners;
 import junit.framework.TestCase;
 
 /** Gradually going through the maths of several papers to get a consistent calculation

@@ -18,7 +18,6 @@ import fusionOptics.types.Material;
 import fusionOptics.types.Medium;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Surface;
-import algorithmrepository.exceptions.NotImplementedException;
 
 /** One spherical surface and one flat
  * 

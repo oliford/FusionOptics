@@ -1,6 +1,6 @@
 package fusionOptics.pointSpread;
 
-import oneLiners.OneLiners;
+import uk.co.oliford.jolu.OneLiners;
 
 /** The idea here is to be able to generate a PSF for any 
  * point in a 3D volume, given a regular 3D grid of PSFs in

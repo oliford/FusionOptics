@@ -5,9 +5,9 @@ import fusionOptics.optics.SimpleDoubleConvexLens;
 import fusionOptics.surfaces.Dish;
 import fusionOptics.surfaces.Plane;
 import fusionOptics.types.Element;
-import oneLiners.OneLiners;
 import seed.digeom.IFunction;
 import seed.optimization.Optimizer;
+import uk.co.oliford.jolu.OneLiners;
 
 
 /** Optimiser to set the best curvature radii for a simple lens  

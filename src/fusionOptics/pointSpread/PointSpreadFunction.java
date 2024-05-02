@@ -5,9 +5,8 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
 import fusionOptics.types.Pol;
-
-import oneLiners.OneLiners;
 import seed.matrix.Mat;
+import uk.co.oliford.jolu.OneLiners;
 
 /** General base for point spread functions.
  * 

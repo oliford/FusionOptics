@@ -20,9 +20,6 @@
  */
 package fusionOptics.interfaces;
 
-import fusionOptics.types.Interface;
-import fusionOptics.types.Medium;
-import algorithmrepository.exceptions.NotImplementedException;
 import net.jafama.FastMath;
 
 /**  Interface with single layer anti-reflective coating.
@@ -51,7 +48,7 @@ public class IsoIsoAntiReflective extends IsoIsoInterface {
 	/** Cannot be implemented. There is no ideal since we need to know the intended wavelength. This routine is only
 	 * here to stop users accidently picking up IsoIsoInterface.ideal() and not getting a coating at all */
 	public static IsoIsoAntiReflective ideal() {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 	
 	/**

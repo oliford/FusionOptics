@@ -1,8 +1,11 @@
 package fusionOptics.materials;
 
 import java.util.Arrays;
+
+import algorithmrepository.ExtrapolationMode;
+import algorithmrepository.Interpolation1D;
+import algorithmrepository.InterpolationMode;
 import fusionOptics.types.Material;
-import algorithmrepository.LinearInterpolation1D;
 import net.jafama.FastMath;
 
 /** This is the LAK9 Schott glass
@@ -40,7 +43,7 @@ public class LAK9 extends Material {
 	/** This data from  http://www.us.schott.com/advanced_optics/english/knowledge-center/technical-articles-and-tools/abbe-diagramm.html#
 	 *  and is for 25mm thickness */
 	
-	LinearInterpolation1D transmittance = new LinearInterpolation1D(tL, t);
+	Interpolation1D transmittance = new Interpolation1D(tL, t, InterpolationMode.LINEAR, ExtrapolationMode.EXCEPTION);
 	
 	@Override
 	public int getNAxes() {

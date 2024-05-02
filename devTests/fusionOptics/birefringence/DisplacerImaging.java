@@ -1,6 +1,5 @@
 package fusionOptics.birefringence;
 
-import binaryMatrixFile.AsciiMatrixFile;
 import fusionOptics.MinervaOpticsSettings;
 import fusionOptics.OpticApprox;
 import fusionOptics.Util;
@@ -25,7 +24,8 @@ import fusionOptics.types.Optic;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
 import net.jafama.FastMath;
-import oneLiners.OneLiners;
+import uk.co.oliford.jolu.AsciiMatrixFile;
+import uk.co.oliford.jolu.OneLiners;
 
 /** Look at the phase and contrast of a single perfect displacer plate
  *  via a real imaging system (aspheric or camera lens)

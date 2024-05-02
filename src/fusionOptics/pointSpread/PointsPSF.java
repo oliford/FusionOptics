@@ -4,12 +4,9 @@ import java.io.Serializable;
 
 import fusionOptics.types.Pol;
 
-import otherSupport.RandomManager;
-
-import oneLiners.OneLiners;
+import uk.co.oliford.jolu.OneLiners;
+import uk.co.oliford.jolu.RandomManager;
 import algorithmrepository.Algorithms;
-import algorithmrepository.LinearInterpolation1D;
-import algorithmrepository.exceptions.NotImplementedException;
 
 /** Represents the PSF directly with the originally collected points */
 public class PointsPSF extends PointSpreadFunction {
@@ -29,7 +26,7 @@ public class PointsPSF extends PointSpreadFunction {
 
 	@Override
 	public void setCharacterisationData(double[] data) {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 	
 	@Override
@@ -109,7 +106,7 @@ public class PointsPSF extends PointSpreadFunction {
 	@Override
 	public double[][] addToGridMonteCarlo(double[] x, double[] y, double[][] G,
 			double I, int nPoints) {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 	
 	@Override

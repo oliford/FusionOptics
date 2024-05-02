@@ -15,13 +15,7 @@ import fusionOptics.types.Optic;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
 
-import otherSupport.ColorMaps;
-import otherSupport.RandomManager;
-
-import binaryMatrixFile.BinaryMatrixWriter;
-
 import net.jafama.FastMath;
-import oneLiners.OneLiners;
 import algorithmrepository.Algorithms;
 import algorithmrepository.ConjugateGradient;
 import seed.digeom.Function;
@@ -44,6 +38,10 @@ import seed.optimization.genetic.Genetic;
 import seed.optimization.genetic.MSHGPPConfig;
 import seed.optimization.genetic.MegaSuperHyperGeneticProblemPacifier;
 import seed.optimization.genetic.SuperGeneticMk2;
+import uk.co.oliford.jolu.BinaryMatrixWriter;
+import uk.co.oliford.jolu.ColorMaps;
+import uk.co.oliford.jolu.OneLiners;
+import uk.co.oliford.jolu.RandomManager;
 
 /** Optimises properties of an optical component for the best focus (smallest PSF)
  * 

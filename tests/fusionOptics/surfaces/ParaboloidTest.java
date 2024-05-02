@@ -13,9 +13,9 @@ import fusionOptics.types.Intersection;
 import fusionOptics.types.Optic;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
-import otherSupport.ColorMaps;
 import junit.framework.TestCase;
-import oneLiners.OneLiners;
+import uk.co.oliford.jolu.ColorMaps;
+import uk.co.oliford.jolu.OneLiners;
 
 /** Fires lots of random rays at a fairly bend paraboloid surface
  * and tests that the returned intersection point is near the surface.

@@ -2,7 +2,8 @@ package fusionOptics;
 
 import java.io.*;
 import java.util.Properties;
-import otherSupport.SettingsManager;
+
+import uk.co.oliford.jolu.SettingsManager;
 
 /** Provides settings for paths and things
  * 

@@ -2,10 +2,11 @@ package fusionOptics.materials;
 
 import java.util.Arrays;
 
+import algorithmrepository.ExtrapolationMode;
+import algorithmrepository.Interpolation1D;
+import algorithmrepository.InterpolationMode;
 import fusionOptics.types.Material;
 
-import algorithmrepository.LinearInterpolation1D;
-import algorithmrepository.exceptions.NotImplementedException;
 import net.jafama.FastMath;
 
 /** This is the BK7 Schott glass
@@ -35,7 +36,7 @@ public class BK7 extends Material {
 	
 	
 	/** This data from  http://www.uqgoptics.com/materials_optical_schottBK7.aspx and is for 25mm thickness */
-	LinearInterpolation1D transmittance = new LinearInterpolation1D(tL, t);
+	Interpolation1D transmittance = new Interpolation1D(tL, t, InterpolationMode.LINEAR, ExtrapolationMode.EXCEPTION);
 	
 	@Override
 	public int getNAxes() {

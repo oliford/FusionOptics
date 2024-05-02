@@ -4,8 +4,6 @@ import java.util.Arrays;
 
 import fusionOptics.types.Material;
 
-import algorithmrepository.LinearInterpolation1D;
-import algorithmrepository.exceptions.NotImplementedException;
 import net.jafama.FastMath;
 
 /** This is the B270 Schott glass

@@ -3,9 +3,9 @@ package fusionOptics.pointSpread;
 import fusionOptics.MinervaOpticsSettings;
 import fusionOptics.pointSpread.GaussianPSF;
 import fusionOptics.pointSpread.PointSpreadFunction;
-import otherSupport.RandomManager;
-import binaryMatrixFile.BinaryMatrixFile;
-import oneLiners.OneLiners;
+import uk.co.oliford.jolu.BinaryMatrixFile;
+import uk.co.oliford.jolu.OneLiners;
+import uk.co.oliford.jolu.RandomManager;
 
 /** Low level test dev platform for Point spread functions */ 
 public class PointSpreadFunctionTests {

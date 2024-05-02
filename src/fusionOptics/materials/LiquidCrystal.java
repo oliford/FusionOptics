@@ -5,7 +5,6 @@ import java.util.Arrays;
 import fusionOptics.types.Material;
 
 import net.jafama.FastMath;
-import algorithmrepository.exceptions.NotImplementedException;
 
 /** Some info from John of what the Ferro-electric Liquid Crystal dispersion might look like 
  * We really don't know
@@ -73,7 +72,7 @@ public class LiquidCrystal extends Material {
 	@Override
 	public double getVerdetConstant(int modeNumber, double wavelen,
 			double temperature) {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 	
 	//Materials with no modifiable content are equal if they are the same type

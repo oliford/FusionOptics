@@ -4,11 +4,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-import oneLiners.OneLiners;
 import fusionOptics.Util;
 import fusionOptics.interfaces.Absorber;
 import fusionOptics.surfaces.Triangle;
 import fusionOptics.types.Optic;
+import uk.co.oliford.jolu.OneLiners;
 
 public class NodesAndElementsMesh extends Optic {
 	

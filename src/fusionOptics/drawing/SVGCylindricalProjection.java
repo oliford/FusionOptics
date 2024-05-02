@@ -10,12 +10,9 @@ import fusionOptics.types.Optic;
 import fusionOptics.types.RaySegment;
 import fusionOptics.types.Surface;
 
-import algorithmrepository.Algorithms;
-
-import oneLiners.OneLiners;
-
-import svg.SVGLineWriter;
-import svg.SVGSplitView3D;
+import uk.co.oliford.svg.SVGLineWriter;
+import uk.co.oliford.svg.SVGSplitView3D;
+import uk.co.oliford.jolu.OneLiners;
 
 /** Special version of the SVG drawing, for drawing cylindrical (e.g. poloidal for Tokamaks) projections */
 public class SVGCylindricalProjection extends LineDrawer {

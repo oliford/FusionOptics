@@ -28,13 +28,9 @@ import fusionOptics.types.Medium;
 import fusionOptics.types.Pol;
 import fusionOptics.types.RaySegment;
 import fusionOptics.types.Surface;
-
-import binaryMatrixFile.BinaryMatrixWriter;
-
-import algorithmrepository.exceptions.NotImplementedException;
-
-import oneLiners.OneLiners;
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.BinaryMatrixWriter;
+import uk.co.oliford.jolu.OneLiners;
 
 
 /**

@@ -2,12 +2,12 @@ package fusionOptics.materials;
 
 import java.util.Arrays;
 
+import algorithmrepository.ExtrapolationMode;
+import algorithmrepository.Interpolation1D;
+import algorithmrepository.InterpolationMode;
 import fusionOptics.types.Material;
-
-import binaryMatrixFile.BinaryMatrixFile;
-import algorithmrepository.LinearInterpolation1D;
-import algorithmrepository.exceptions.NotImplementedException;
 import net.jafama.FastMath;
+import uk.co.oliford.jolu.BinaryMatrixFile;
 
 /** Materials with wavelength dependent refractive indices given as a linear interpolatable
  * function.
@@ -18,7 +18,7 @@ import net.jafama.FastMath;
  */
 public class WavelengthDependent extends Material {
 	
-	private LinearInterpolation1D interps[];
+	private Interpolation1D interps[];
 	public double minTemp, maxTemp;
 	private double magneticAnomaly;
 	
@@ -31,9 +31,9 @@ public class WavelengthDependent extends Material {
 		this.maxTemp = maxTemp;
 		this.magneticAnomaly = magneticAnomaly; 
 
-		interps = new LinearInterpolation1D[n.length];
+		interps = new Interpolation1D[n.length];
 		for(int i=0; i < n.length; i++) {
-			interps[i] = new LinearInterpolation1D(wavelen, n[i], LinearInterpolation1D.EXTRAPOLATE_EXCEPTION, 0);
+			interps[i] = new Interpolation1D(wavelen, n[i], InterpolationMode.LINEAR, ExtrapolationMode.EXCEPTION);
 		}
 	}
 	
@@ -53,14 +53,14 @@ public class WavelengthDependent extends Material {
 	@Override
 	public double getVerdetConstant(int modeNumber, double wavelen,
 			double temperature) {
-		throw new NotImplementedException();
+		throw new UnsupportedOperationException();
 	}
 
 
 	@Override
 	public int hashCode() {
 		long t; int r = 1;		
-		for(LinearInterpolation1D interp : interps){
+		for(Interpolation1D interp : interps){
 			r = 31 * r + Arrays.hashCode(interp.getX());
 			r = 31 * r + Arrays.hashCode(interp.getF());
 		}			
